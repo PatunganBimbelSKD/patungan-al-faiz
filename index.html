@@ -1,0 +1,2605 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patungan Kelas SKD 2027 Privat AL FAIZ — Real-Time Slot System</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans, Space Grotesk, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            alfaiz: {
+              red: '#B91C1C',
+              darkred: '#450A0A',
+              crimson: '#DC2626',
+              gold: '#FACC15',
+              amber: '#F59E0B',
+              blue: '#0284C7',
+              surface: '#0F0708',
+              card: '#180B0D'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-dark: #0B0506;
+      --accent-red: #EF4444;
+      --accent-gold: #FACC15;
+    }
+
+    body {
+      background-color: #0B0506;
+      color: #F8FAFC;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(220, 38, 38, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(250, 204, 21, 0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(185, 28, 28, 0.15) 0%, transparent 50%);
+    }
+
+    /* Architectural DKV Grid Overlay */
+    .dkv-grid {
+      background-size: 36px 36px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    }
+
+    /* Neo-Brutalist / Visual Communication Card Shadow */
+    .neo-card {
+      background: rgba(24, 11, 13, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.7);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .neo-card-gold {
+      border: 2px solid #FACC15;
+      box-shadow: 6px 6px 0px 0px #B91C1C;
+    }
+
+    .neo-btn-gold {
+      background: linear-gradient(135deg, #FDE047 0%, #FACC15 50%, #EAB308 100%);
+      color: #090405;
+      border: 2px solid #FEF08A;
+      box-shadow: 4px 4px 0px 0px #991B1B;
+      transition: all 0.18s ease;
+    }
+    .neo-btn-gold:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px 0px #DC2626;
+    }
+    .neo-btn-gold:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px 0px #991B1B;
+    }
+
+    /* Slot Cards Animation */
+    .slot-card {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .slot-card.available:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: #FACC15;
+      box-shadow: 0 12px 30px -8px rgba(250, 204, 21, 0.28);
+    }
+
+    @keyframes pulse-fast {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(0.98); }
+    }
+    .animate-pulse-fast {
+      animation: pulse-fast 1.5s infinite ease-in-out;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float-slow {
+      animation: float-slow 4.5s ease-in-out infinite;
+    }
+
+    .logo-glow {
+      filter: drop-shadow(0 10px 25px rgba(250, 204, 21, 0.22)) drop-shadow(0 4px 12px rgba(220, 38, 38, 0.35));
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0506;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #451A1C;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #DC2626;
+    }
+  </style>
+</head>
+<body class="dkv-grid min-h-screen flex flex-col selection:bg-yellow-400 selection:text-black">
+
+  <!-- TOP RUNNING TICKER (DKV EDITORIAL STYLE) -->
+  <div class="bg-gradient-to-r from-red-900 via-red-700 to-red-900 border-b border-yellow-400/40 py-2 overflow-hidden relative z-30">
+    <div class="animate-marquee flex items-center gap-8 text-xs font-mono uppercase tracking-widest text-yellow-300 font-bold">
+      <span class="flex items-center gap-2"><i class="ph-fill ph-lightning text-yellow-400"></i> PATUNGAN KELAS ZOOM/YOUTUBE SKD 2027 PRIVAT AL FAIZ</span>
+      <span>•</span>
+      <span class="text-white">DILENGKAPI MODEL SOAL TIU TERBARU!!</span>
+      <span>•</span>
+      <span class="bg-yellow-400 text-black px-2 py-0.5 rounded font-extrabold">HARGA PATUNGAN: Rp20.000 / SLOT</span>
+      <span>•</span>
+      <span class="text-yellow-200">PART 1: KUOTA TERBATAS 4 ORANG (START 14 NOV 2026)</span>
+      <span>•</span>
+      <span class="text-yellow-200">PART 2: KUOTA TERBATAS 10 ORANG (START 23 JAN 2027)</span>
+      <span>•</span>
+      <span class="text-white">SISTEM REAL-TIME BOOKING (WAKTU HOLD SLOT 5 MENIT)</span>
+      <span>•</span>
+      <!-- Duplicated for seamless loop -->
+      <span class="flex items-center gap-2"><i class="ph-fill ph-lightning text-yellow-400"></i> PATUNGAN KELAS ZOOM/YOUTUBE SKD 2027 PRIVAT AL FAIZ</span>
+      <span>•</span>
+      <span class="text-white">DILENGKAPI MODEL SOAL TIU TERBARU!!</span>
+      <span>•</span>
+      <span class="bg-yellow-400 text-black px-2 py-0.5 rounded font-extrabold">HARGA PATUNGAN: Rp20.000 / SLOT</span>
+      <span>•</span>
+      <span class="text-yellow-200">PART 1: KUOTA TERBATAS 4 ORANG (START 14 NOV 2026)</span>
+      <span>•</span>
+      <span class="text-yellow-200">PART 2: KUOTA TERBATAS 10 ORANG (START 23 JAN 2027)</span>
+      <span>•</span>
+      <span class="text-white">SISTEM REAL-TIME BOOKING (WAKTU HOLD SLOT 5 MENIT)</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 backdrop-blur-xl bg-[#0B0506]/90 border-b border-yellow-400/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-2.5 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3.5 group">
+        <!-- Logo Emblem Patungan Bimbel SKD (Desain Baru 3D Toga & Buku Senada Warna Website) -->
+        <div class="w-12 h-12 sm:w-13 sm:h-13 rounded-2xl p-0.5 bg-gradient-to-tr from-yellow-500 via-yellow-300 to-red-600 shadow-lg shadow-red-950/70 group-hover:scale-105 transition-transform duration-300 shrink-0">
+          <svg viewBox="0 0 200 200" class="w-full h-full rounded-[14px] bg-[#130608]">
+            <defs>
+              <linearGradient id="navGold3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFBEB" />
+                <stop offset="35%" stop-color="#FDE047" />
+                <stop offset="70%" stop-color="#EAB308" />
+                <stop offset="100%" stop-color="#B45309" />
+              </linearGradient>
+              <linearGradient id="navChampagne3D" x1="20%" y1="0%" x2="80%" y2="100%">
+                <stop offset="0%" stop-color="#FEF9C3" />
+                <stop offset="50%" stop-color="#FDE047" />
+                <stop offset="100%" stop-color="#CA8A04" />
+              </linearGradient>
+              <linearGradient id="navCrimson3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#991B1B" />
+                <stop offset="100%" stop-color="#450A0A" />
+              </linearGradient>
+              <linearGradient id="navDarkWing" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7F1D1D" />
+                <stop offset="50%" stop-color="#2A080C" />
+                <stop offset="100%" stop-color="#090304" />
+              </linearGradient>
+            </defs>
+
+            <!-- Soft Glow Behind Icon -->
+            <circle cx="100" cy="95" r="70" fill="#DC2626" opacity="0.18" />
+
+            <!-- Left & Right 3D Figures (Crimson Harmonized) -->
+            <circle cx="56" cy="84" r="15" fill="url(#navCrimson3D)" stroke="#FACC15" stroke-width="1" stroke-opacity="0.35" />
+            <path d="M28 126 C30 106 42 102 56 102 C70 102 80 106 82 126 Z" fill="url(#navCrimson3D)" />
+
+            <circle cx="144" cy="84" r="15" fill="url(#navCrimson3D)" stroke="#FACC15" stroke-width="1" stroke-opacity="0.35" />
+            <path d="M118 126 C120 106 130 102 144 102 C158 102 170 106 172 126 Z" fill="url(#navCrimson3D)" />
+
+            <!-- Graduation Cap (Toga) on Center Figure -->
+            <polygon points="100,18 148,36 100,52 52,36" fill="url(#navDarkWing)" stroke="url(#navGold3D)" stroke-width="2" />
+            <path d="M76 43 C76 36 124 36 124 43 L124 54 C124 47 76 47 76 54 Z" fill="#1F070A" stroke="url(#navGold3D)" stroke-width="2" />
+            <!-- Gold Tassel -->
+            <path d="M136 40 L138 64" stroke="url(#navGold3D)" stroke-width="2.5" stroke-linecap="round" />
+            <ellipse cx="138" cy="67" rx="4" ry="6" fill="url(#navGold3D)" />
+
+            <!-- Center Figure (3D Champagne Gold) -->
+            <circle cx="100" cy="72" r="20" fill="url(#navChampagne3D)" stroke="#130608" stroke-width="3" />
+            <path d="M64 138 C66 105 80 95 100 95 C120 95 134 105 136 138 Z" fill="url(#navChampagne3D)" stroke="#130608" stroke-width="3" />
+
+            <!-- Layered Open Book -->
+            <path d="M22 120 Q62 120 100 154 Q138 120 178 120 L170 136 Q135 136 100 162 Q65 136 30 136 Z" fill="url(#navGold3D)" />
+            <path d="M14 134 Q58 134 100 164 Q142 134 186 134 L172 154 Q136 148 100 174 Q64 148 28 154 Z" fill="url(#navDarkWing)" stroke="url(#navGold3D)" stroke-width="1.8" />
+          </svg>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-2">
+            <!-- Brand Wordmark Sesuai Logo -->
+            <div class="font-display font-extrabold text-lg sm:text-xl tracking-tight leading-none flex items-center">
+              <span class="relative inline-flex items-center text-white">
+                <span class="text-yellow-400">P</span>atungan
+              </span>
+              <span class="ml-1.5 text-slate-200 font-bold">Bimbel</span>
+              <span class="ml-1 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 font-extrabold">SKD</span>
+            </div>
+            <span class="hidden md:inline-flex items-center gap-1 text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-red-500/20 text-yellow-300 border border-yellow-400/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              Live Slot
+            </span>
+          </div>
+          <p class="text-[11px] text-slate-400 font-medium mt-0.5">Komunitas Patungan Resmi • Kelas SKD Privat AL FAIZ 2027</p>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Active Booking Indicator Button (Shows up when user has an active slot) -->
+        <button id="activeBookingNavBtn" onclick="openActiveTicketModal()" class="hidden items-center gap-2 px-3 py-1.5 rounded-xl bg-yellow-400/15 border border-yellow-400 text-yellow-300 text-xs font-mono font-bold animate-pulse">
+          <i class="ph-fill ph-timer text-base"></i>
+          <span>Tiket Aktif: <span id="navCountdownText">05:00</span></span>
+        </button>
+
+        <a href="#pilih-slot" class="neo-btn-gold px-3.5 py-2 rounded-xl font-display font-bold text-xs sm:text-sm flex items-center gap-1.5">
+          <i class="ph-bold ph-SquaresFour"></i>
+          <span>Ambil Slot</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow">
+    <!-- HERO SECTION (DKV POSTER INSPIRED) -->
+    <section class="relative pt-8 pb-12 sm:pt-14 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        <!-- Left Column: Visual Communication Typography -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- BRAND IDENTITY HEADER CARD (LOGO BARU 3D TOGA & BUKU SENADA WARNA WEBSITE) -->
+          <div class="neo-card rounded-3xl p-5 sm:p-6 border border-yellow-400/40 bg-gradient-to-br from-[#22090D]/95 via-[#120608]/98 to-[#2D0A10]/95 flex flex-col sm:flex-row items-center gap-5 sm:gap-6 shadow-2xl relative overflow-hidden">
+            <!-- Ambient Radial Lighting -->
+            <div class="absolute -right-12 -top-12 w-44 h-44 bg-yellow-400/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-12 -bottom-12 w-44 h-44 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- 3D Vector Logo: Patungan Bimbel SKD (Graduation Cap + 3 Figures + Open Book + P Swoosh) -->
+            <div class="w-40 h-36 sm:w-44 sm:h-40 shrink-0 animate-float-slow logo-glow bg-gradient-to-b from-white/[0.04] to-black/40 rounded-2xl p-2 border border-yellow-400/25 flex items-center justify-center">
+              <svg viewBox="0 0 420 350" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <!-- 3D Champagne Gold for Center Figure & Book Pages -->
+                  <linearGradient id="heroChampagne3D" x1="25%" y1="0%" x2="85%" y2="100%">
+                    <stop offset="0%" stop-color="#FFFBEB" />
+                    <stop offset="30%" stop-color="#FDE68A" />
+                    <stop offset="70%" stop-color="#F59E0B" />
+                    <stop offset="100%" stop-color="#B45309" />
+                  </linearGradient>
+
+                  <!-- Rich Metallic Gold for SKD, Tassel & Swoosh -->
+                  <linearGradient id="heroGoldRich" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FEF08A" />
+                    <stop offset="45%" stop-color="#FACC15" />
+                    <stop offset="80%" stop-color="#CA8A04" />
+                    <stop offset="100%" stop-color="#FEF9C3" />
+                  </linearGradient>
+
+                  <!-- Warm Gold Secondary Page Layer -->
+                  <linearGradient id="heroPageSoftGold" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#FDE68A" />
+                    <stop offset="50%" stop-color="#EAB308" />
+                    <stop offset="100%" stop-color="#FDE68A" />
+                  </linearGradient>
+
+                  <!-- Left Figure: Deep Crimson Obsidian 3D Shading -->
+                  <radialGradient id="leftFigGrad" cx="35%" cy="25%" r="75%">
+                    <stop offset="0%" stop-color="#991B1B" />
+                    <stop offset="55%" stop-color="#450A0A" />
+                    <stop offset="100%" stop-color="#1A0507" />
+                  </radialGradient>
+
+                  <!-- Right Figure: Warm Ruby-Slate 3D Shading -->
+                  <radialGradient id="rightFigGrad" cx="35%" cy="25%" r="75%">
+                    <stop offset="0%" stop-color="#B91C1C" />
+                    <stop offset="55%" stop-color="#5B0E14" />
+                    <stop offset="100%" stop-color="#220609" />
+                  </radialGradient>
+
+                  <!-- Mortarboard (Toga) & Book Base Dark Crimson-Obsidian -->
+                  <linearGradient id="obsidianCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3B0A11" />
+                    <stop offset="50%" stop-color="#180609" />
+                    <stop offset="100%" stop-color="#090203" />
+                  </linearGradient>
+
+                  <!-- Soft Drop Shadow for 3D Depth -->
+                  <filter id="soft3DShadow" x="-15%" y="-15%" width="130%" height="130%">
+                    <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.55" />
+                  </filter>
+                </defs>
+
+                <!-- Subtle Golden-Crimson Halo Behind Figures -->
+                <ellipse cx="210" cy="115" rx="135" ry="75" fill="#DC2626" opacity="0.14" />
+                <circle cx="210" cy="95" r="58" fill="#FACC15" opacity="0.10" />
+
+                <!-- ========================================================= -->
+                <!-- 1. LEFT & RIGHT 3D FIGURES (HARMONIZED CRIMSON-OBSIDIAN)  -->
+                <!-- ========================================================= -->
+                <!-- Left Figure -->
+                <g filter="url(#soft3DShadow)">
+                  <circle cx="122" cy="102" r="26" fill="url(#leftFigGrad)" stroke="#FACC15" stroke-width="1.2" stroke-opacity="0.35" />
+                  <path d="M72 174 C75 140 95 132 122 132 C149 132 166 140 170 174 Z" fill="url(#leftFigGrad)" stroke="#FACC15" stroke-width="1.2" stroke-opacity="0.3" />
+                </g>
+
+                <!-- Right Figure -->
+                <g filter="url(#soft3DShadow)">
+                  <circle cx="298" cy="102" r="26" fill="url(#rightFigGrad)" stroke="#FACC15" stroke-width="1.2" stroke-opacity="0.35" />
+                  <path d="M250 174 C254 140 271 132 298 132 C325 132 345 140 348 174 Z" fill="url(#rightFigGrad)" stroke="#FACC15" stroke-width="1.2" stroke-opacity="0.3" />
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- 2. CENTER 3D FIGURE WITH GRADUATION CAP (TOGA) & TASSEL   -->
+                <!-- ========================================================= -->
+                <g filter="url(#soft3DShadow)">
+                  <!-- Toga Mortarboard Top (Tilted slightly like reference) -->
+                  <g transform="rotate(-3 210 42)">
+                    <!-- Cap Diamond Top -->
+                    <polygon points="210,10 286,38 210,64 134,38" fill="url(#obsidianCrimson)" stroke="url(#heroGoldRich)" stroke-width="2" />
+                    <!-- Inner Cap Skull Base -->
+                    <path d="M172 47 C172 34 248 34 248 47 L248 64 C248 51 172 51 172 64 Z" fill="#160507" />
+                    <!-- Golden Rim Band on Cap -->
+                    <path d="M171 49 C171 37 249 37 249 49 L249 56 C249 44 171 44 171 56 Z" fill="url(#heroGoldRich)" />
+                    <!-- Hanging Gold Tassel on Right -->
+                    <path d="M266 43 Q270 58 268 74" fill="none" stroke="url(#heroGoldRich)" stroke-width="3" stroke-linecap="round" />
+                    <circle cx="268" cy="75" r="4" fill="url(#heroGoldRich)" />
+                    <path d="M264 76 L261 92 C265 95 271 95 275 92 L272 76 Z" fill="url(#heroChampagne3D)" />
+                  </g>
+
+                  <!-- Center Head (3D Champagne Gold) -->
+                  <circle cx="210" cy="84" r="32" fill="url(#heroChampagne3D)" stroke="#140608" stroke-width="4" />
+
+                  <!-- Center Body / Shoulders (3D Champagne Gold) -->
+                  <path d="M146 192 C148 138 174 121 210 121 C246 121 272 138 274 192 Z" fill="url(#heroChampagne3D)" stroke="#140608" stroke-width="4" />
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- 3. LAYERED SWEEPING OPEN BOOK                             -->
+                <!-- ========================================================= -->
+                <g filter="url(#soft3DShadow)">
+                  <!-- Outer Gold Page Wings (Top Layer) -->
+                  <path d="M68 152 Q142 156 210 206 Q278 156 352 152 L342 174 Q274 174 210 214 Q146 174 78 174 Z" fill="url(#heroPageSoftGold)" stroke="#140608" stroke-width="1.5" />
+
+                  <!-- Inner Gold Center Spine Leaves -->
+                  <path d="M128 148 Q178 164 210 208 Q168 178 116 164 Z" fill="url(#heroChampagne3D)" />
+                  <path d="M292 148 Q242 164 210 208 Q252 178 304 164 Z" fill="url(#heroChampagne3D)" />
+
+                  <!-- Bottom Bold Crimson-Obsidian Book Cover Wings -->
+                  <path d="M52 172 Q134 174 210 218 Q286 174 368 172 L348 202 Q280 192 210 230 Q140 192 72 202 Z" fill="url(#obsidianCrimson)" stroke="url(#heroGoldRich)" stroke-width="2.2" />
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- 4. TYPOGRAPHY: "Patungan" (WITH P SWOOSH) & "Bimbel SKD"  -->
+                <!-- ========================================================= -->
+                <!-- Word "Patungan" with custom P and Golden Page Curl Swoosh -->
+                <g transform="translate(0, 8)">
+                  <!-- Custom Bold "P" Stem & Bowl -->
+                  <path d="M36 280 L36 216 L76 216 C94 216 105 225 105 239 C105 253 94 263 75 263 L56 263 L56 280 Z M56 232 L56 248 L73 248 C81 248 86 244 86 239 C86 234 81 232 73 232 Z" fill="#FFFFFF" />
+                  <!-- Iconic Golden Swoosh Cutting Into the 'P' -->
+                  <path d="M35 280 Q50 248 82 238 Q74 258 46 272 Z" fill="url(#heroGoldRich)" />
+
+                  <!-- "atungan" -->
+                  <text x="103" y="279" fill="#FFFFFF" font-family="Plus Jakarta Sans, Space Grotesk, sans-serif" font-weight="800" font-size="60" letter-spacing="-1.5">
+                    atungan
+                  </text>
+
+                  <!-- "Bimbel" -->
+                  <text x="86" y="328" fill="#E2E8F0" font-family="Plus Jakarta Sans, Space Grotesk, sans-serif" font-weight="800" font-size="42" letter-spacing="-0.8">
+                    Bimbel
+                  </text>
+
+                  <!-- "SKD" in 3D Metallic Gold -->
+                  <text x="242" y="329" fill="url(#heroGoldRich)" font-family="Plus Jakarta Sans, Space Grotesk, sans-serif" font-weight="800" font-size="45" letter-spacing="-0.5" filter="url(#soft3DShadow)">
+                    SKD
+                  </text>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Brand Identity Text Description -->
+            <div class="text-center sm:text-left space-y-1.5 flex-1">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-[10px] font-mono font-bold uppercase tracking-wider">
+                <i class="ph-fill ph-graduation-cap text-yellow-400"></i> Official Identity • Pejuang NIP 2027
+              </div>
+              <h2 class="font-display font-extrabold text-xl sm:text-2xl text-white tracking-tight">
+                <span class="text-yellow-400">P</span>atungan <span class="text-slate-200">Bimbel</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500">SKD</span>
+              </h2>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Platform patungan resmi belajar intensif CPNS & Kedinasan <strong class="text-yellow-400">Kelas Zoom/YouTube SKD 2027 Privat AL FAIZ</strong>. Hemat, transparan, dan dilengkapi sistem kunci slot real-time 5 menit.
+              </p>
+            </div>
+          </div>
+
+          <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-red-950/90 border border-red-500/40 text-xs font-semibold text-red-200">
+            <span class="px-2 py-0.5 rounded-full bg-yellow-400 text-black font-extrabold text-[10px] tracking-wider uppercase">EDISI SKD 2027</span>
+            <span>Dilengkapi Model Soal TIU Terbaru!!</span>
+          </div>
+
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2 bg-sky-500/20 border border-sky-400/40 text-sky-300 px-3 py-1 rounded-lg text-xs font-mono font-bold uppercase tracking-wider">
+              <i class="ph-fill ph-video-camera text-sky-400"></i>
+              KELAS ZOOM / YOUTUBE BERSIFAT PRIBADI
+            </div>
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.06] text-white">
+              PATUNGAN KELAS <br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 drop-shadow">
+                SKD PRIVAT AL FAIZ
+              </span>
+            </h1>
+          </div>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Belajar intensif bareng <strong class="text-yellow-400 font-semibold">Super Teacher Al Faiz</strong> selama 15x pertemuan (100–120 menit/sesi) lengkap dengan <span class="text-white font-medium">TWK, TIU, TKP, Tips Pengerjaan Soal + Rumus Cinta, Modul Pembahasan, & Record Kelas</span>. Ambil slot patungan secara real-time sekarang!
+          </p>
+
+          <!-- Price Comparison Banner -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <div class="neo-card rounded-2xl p-4 border-l-4 border-l-slate-500">
+              <span class="text-[11px] font-mono uppercase text-slate-400 block">Harga Normal Resmi</span>
+              <span class="text-lg font-display font-bold text-slate-400 line-through">Rp300.000</span>
+              <span class="block text-xs text-red-400 font-semibold mt-0.5">Promo Web: Rp255.000</span>
+            </div>
+
+            <div class="neo-card neo-card-gold rounded-2xl p-4 bg-gradient-to-br from-red-950/90 to-black sm:col-span-2 flex items-center justify-between">
+              <div>
+                <span class="inline-flex items-center gap-1 text-[11px] font-mono uppercase text-yellow-300 font-bold">
+                  <i class="ph-fill ph-sparkle"></i> Harga Patungan Per Slot
+                </span>
+                <div class="flex items-baseline gap-2 mt-0.5">
+                  <span class="text-3xl sm:text-4xl font-display font-extrabold text-yellow-400 tracking-tight">Rp20.000</span>
+                  <span class="text-xs text-slate-300 font-mono">/ peserta</span>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="inline-block px-3 py-1 rounded-full bg-green-500/20 border border-green-400/40 text-green-300 font-mono text-xs font-bold">
+                  Hemat 92%
+                </span>
+                <p class="text-[11px] text-slate-400 mt-1">Booking Hold: 5 Menit</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Jump Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#pilih-slot" onclick="switchPartTab(1)" class="neo-btn-gold px-5 py-3.5 rounded-2xl font-display font-extrabold text-sm flex items-center gap-2">
+              <span>Booking Slot Part 1 (4 Kuota)</span>
+              <i class="ph-bold ph-arrow-right"></i>
+            </a>
+            <a href="#pilih-slot" onclick="switchPartTab(2)" class="px-5 py-3.5 rounded-2xl font-display font-bold text-sm bg-white/10 hover:bg-white/15 text-white border border-white/20 transition flex items-center gap-2">
+              <span>Booking Slot Part 2 (10 Kuota)</span>
+              <i class="ph-bold ph-users-three text-yellow-400"></i>
+            </a>
+            <button onclick="openRecoverTicketModal()" class="px-4 py-3.5 rounded-2xl font-mono text-xs text-slate-300 hover:text-yellow-300 border border-white/10 hover:border-yellow-400/40 transition flex items-center gap-1.5">
+              <i class="ph-bold ph-receipt"></i>
+              <span>Cek Tiket Booking Saya</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Live Quota Summary Dashboard Card -->
+        <div class="lg:col-span-5">
+          <div class="neo-card rounded-3xl p-5 sm:p-6 border border-red-500/30 relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-48 h-48 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-yellow-400/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-white/10">
+              <div class="flex items-center gap-2.5">
+                <span class="w-3 h-3 rounded-full bg-red-500 animate-ping"></span>
+                <h2 class="font-display font-bold text-lg text-white tracking-tight">STATUS KUOTA REAL-TIME</h2>
+              </div>
+              <span id="syncBadge" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+                <i class="ph-fill ph-cloud-check"></i> Live DB
+              </span>
+            </div>
+
+            <!-- Part 1 Live Card -->
+            <div class="p-4 rounded-2xl bg-gradient-to-br from-red-950/80 to-black/80 border border-red-500/30 mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-yellow-400 text-black font-extrabold">SKD 2027 PART 1</span>
+                  <h3 class="font-display font-bold text-white text-base mt-1">Start Kelas: 14 November 2026</h3>
+                </div>
+                <div class="text-right">
+                  <span id="heroPart1Count" class="font-mono font-extrabold text-2xl text-yellow-400">0/4</span>
+                  <span class="block text-[10px] font-mono text-slate-400 uppercase">Slot Terisi</span>
+                </div>
+              </div>
+              <div class="w-full h-2.5 bg-black/60 rounded-full overflow-hidden border border-white/10 my-2.5">
+                <div id="heroPart1Bar" class="h-full bg-gradient-to-r from-yellow-400 to-red-500 transition-all duration-500" style="width: 0%"></div>
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-300 font-mono">
+                <span>Kuota Maksimal: 4 Orang</span>
+                <button onclick="switchPartTab(1); document.getElementById('pilih-slot').scrollIntoView({behavior:'smooth'})" class="text-yellow-400 hover:underline font-bold flex items-center gap-1">
+                  Pilih Part 1 <i class="ph-bold ph-caret-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Part 2 Live Card -->
+            <div class="p-4 rounded-2xl bg-gradient-to-br from-red-950/80 to-black/80 border border-sky-500/30 mb-5">
+              <div class="flex items-center justify-between mb-2">
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-sky-400 text-black font-extrabold">SKD 2027 PART 2</span>
+                  <h3 class="font-display font-bold text-white text-base mt-1">Start Kelas: 23 Januari 2027</h3>
+                </div>
+                <div class="text-right">
+                  <span id="heroPart2Count" class="font-mono font-extrabold text-2xl text-sky-400">0/10</span>
+                  <span class="block text-[10px] font-mono text-slate-400 uppercase">Slot Terisi</span>
+                </div>
+              </div>
+              <div class="w-full h-2.5 bg-black/60 rounded-full overflow-hidden border border-white/10 my-2.5">
+                <div id="heroPart2Bar" class="h-full bg-gradient-to-r from-sky-400 to-indigo-500 transition-all duration-500" style="width: 0%"></div>
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-300 font-mono">
+                <span>Kuota Maksimal: 10 Orang</span>
+                <button onclick="switchPartTab(2); document.getElementById('pilih-slot').scrollIntoView({behavior:'smooth'})" class="text-sky-400 hover:underline font-bold flex items-center gap-1">
+                  Pilih Part 2 <i class="ph-bold ph-caret-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Rules Notice -->
+            <div class="rounded-xl bg-amber-500/10 border border-amber-400/30 p-3.5 text-xs text-amber-200/90 space-y-1.5">
+              <div class="font-bold text-amber-300 flex items-center gap-1.5">
+                <i class="ph-fill ph-shield-check text-base"></i>
+                <span>Sistem Proteksi Slot Otomatis (5 Menit)</span>
+              </div>
+              <p class="leading-relaxed text-[11px] text-slate-300">
+                Nomor rekening pembayaran (<strong class="text-white">BCA & ShopeePay</strong>) serta kontak konfirmasi dibuka secara eksklusif setelah Anda memilih dan mengisi slot. Waktu penguncian slot adalah <strong class="text-yellow-300">5 menit</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SLOT SELECTION SECTION -->
+    <section id="pilih-slot" class="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="neo-card rounded-3xl p-5 sm:p-8 lg:p-10 border border-white/15">
+        
+        <!-- Header & Part Switcher Tabs -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-yellow-400 font-bold block mb-1">
+              // REAL-TIME SLOT MATRIX
+            </span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white">
+              PILIH SLOT PATUNGAN ANDA
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">
+              Klik pada slot berstatus <span class="text-emerald-400 font-semibold">TERSEDIA</span> untuk mem-booking. Slot akan dikunci selama 5 menit untuk penyelesaian pembayaran.
+            </p>
+          </div>
+
+          <!-- Part Selector Tabs -->
+          <div class="grid grid-cols-2 gap-2 bg-black/60 p-1.5 rounded-2xl border border-white/10 w-full md:w-auto">
+            <button id="tabBtnPart1" onclick="switchPartTab(1)" class="px-4 py-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg border border-yellow-400/50">
+              <i class="ph-fill ph-Flame text-yellow-300"></i>
+              <div class="text-left">
+                <div class="leading-none">PART 1</div>
+                <div class="text-[10px] font-mono text-yellow-200 font-normal mt-0.5">Kuota 4 Orang</div>
+              </div>
+            </button>
+
+            <button id="tabBtnPart2" onclick="switchPartTab(2)" class="px-4 py-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white">
+              <i class="ph-fill ph-rocket-launch text-sky-400"></i>
+              <div class="text-left">
+                <div class="leading-none">PART 2</div>
+                <div class="text-[10px] font-mono text-slate-400 font-normal mt-0.5">Kuota 10 Orang</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Legend & Active Part Banner -->
+        <div class="my-6 flex flex-wrap items-center justify-between gap-4 bg-white/[0.03] p-4 rounded-2xl border border-white/10">
+          <div id="activePartInfoBanner" class="flex flex-wrap items-center gap-3">
+            <span class="px-3 py-1 rounded-lg bg-yellow-400 text-black font-display font-extrabold text-xs">
+              KELAS SKD 2027 - PART 1
+            </span>
+            <span class="text-xs sm:text-sm text-slate-200 font-medium flex items-center gap-1.5">
+              <i class="ph-bold ph-calendar-check text-yellow-400"></i>
+              Start Kelas: <strong>14 November 2026</strong>
+            </span>
+            <span class="text-xs text-slate-400 font-mono">
+              • Sabtu 18.50 WIB & Minggu 16.00 WIB
+            </span>
+          </div>
+
+          <!-- Status Legend -->
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono">
+            <span class="flex items-center gap-1.5 text-emerald-300">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Tersedia
+            </span>
+            <span class="flex items-center gap-1.5 text-amber-300">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span> Dibooking (5m)
+            </span>
+            <span class="flex items-center gap-1.5 text-sky-300">
+              <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span> Menunggu Verifikasi
+            </span>
+            <span class="flex items-center gap-1.5 text-rose-300">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> Terisi / Lunas
+            </span>
+          </div>
+        </div>
+
+        <!-- DYNAMIC SLOTS GRID -->
+        <div id="slotsGridContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Populated dynamically by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DETAIL MATERI & FASILITAS (FROM POSTER IMAGE) -->
+    <section class="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-mono uppercase tracking-widest text-yellow-400 font-bold">
+          // SILABUS & FASILITAS RESMI PRIVAT AL FAIZ
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-1">
+          KURIKULUM LENGKAP PART 1 & PART 2
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Materi Part 1 dan Part 2 dirancang <strong class="text-white">100% Berbeda & Saling Melengkapi</strong>, dilengkapi dengan Model Soal TIU Terbaru sesuai kisi-kisi SKD 2027.
+        </p>
+      </div>
+
+      <!-- Facilities Banner -->
+      <div class="neo-card rounded-3xl p-6 sm:p-8 border border-yellow-400/30 mb-8 bg-gradient-to-r from-red-950/60 via-[#180B0D] to-red-950/60">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="space-y-2 lg:max-w-md">
+            <span class="px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-300 border border-yellow-400/40 font-mono text-xs font-bold">
+              FASILITAS EKSKLUSIF PESERTA
+            </span>
+            <h3 class="font-display font-extrabold text-2xl text-white">
+              Fasilitas yang Didapatkan di Setiap Part:
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Seluruh sesi dilaksanakan secara Live via Zoom dan Terintegrasi dengan YouTube Bersifat Pribadi bersama Super Teacher Al Faiz.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-black/40 border border-white/10">
+              <i class="ph-fill ph-check-circle text-emerald-400 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-xs text-slate-200"><strong>15x Belajar Bareng Super Teacher Al Faiz</strong> via Zoom / YouTube Pribadi</span>
+            </div>
+            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-black/40 border border-white/10">
+              <i class="ph-fill ph-check-circle text-emerald-400 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-xs text-slate-200"><strong>Durasi 100–120 Menit</strong> Tiap Pertemuan (Sabtu 18.50 & Minggu 16.00 WIB)</span>
+            </div>
+            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-black/40 border border-white/10">
+              <i class="ph-fill ph-check-circle text-emerald-400 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-xs text-slate-200"><strong>Tips Pengerjaan Soal + Rumus Cinta</strong> (TWK, TKP, dan TIU Lengkap)</span>
+            </div>
+            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-black/40 border border-white/10">
+              <i class="ph-fill ph-check-circle text-emerald-400 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-xs text-slate-200"><strong>Modul Soal + Pembahasan & Record Kelas</strong> (Akses s.d. seleksi SKD selesai)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual Curriculum Columns (Part 1 vs Part 2) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- PART 1 CURRICULUM CARD -->
+        <div class="neo-card rounded-3xl p-6 sm:p-7 border-t-4 border-t-yellow-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 pb-4 border-b border-white/10">
+              <div>
+                <span class="text-xs font-mono text-yellow-400 font-bold uppercase">KUOTA PATUNGAN: 4 ORANG</span>
+                <h3 class="font-display font-extrabold text-2xl text-white">SKD 2027 — PART 1</h3>
+              </div>
+              <div class="text-right">
+                <span class="px-3 py-1 rounded-lg bg-yellow-400 text-black font-mono font-extrabold text-xs block">
+                  START 14 NOV 2026
+                </span>
+                <span class="text-[11px] text-slate-400 font-mono">Rp20.000 / Slot</span>
+              </div>
+            </div>
+
+            <!-- Model Soal TIU Terbaru Part 1 -->
+            <div class="my-4 p-3.5 rounded-2xl bg-red-950/60 border border-yellow-400/30">
+              <div class="text-xs font-mono uppercase text-yellow-300 font-bold mb-2 flex items-center gap-1.5">
+                <i class="ph-fill ph-star"></i> Dilengkapi Model Soal TIU Terbaru Part 1:
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-black/50 text-xs text-white border border-white/10">✓ Kecukupan Data</span>
+                <span class="px-2.5 py-1 rounded-lg bg-black/50 text-xs text-white border border-white/10">✓ Nilai yang Mendekati</span>
+                <span class="px-2.5 py-1 rounded-lg bg-black/50 text-xs text-white border border-white/10">✓ Soal Tabel (Kombinasi Pilihan)</span>
+              </div>
+            </div>
+
+            <!-- List Materi Part 1 -->
+            <h4 class="font-mono text-xs uppercase tracking-wider text-slate-400 font-bold mb-3">List 15 Materi Pertemuan Part 1:</h4>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200 mb-6">
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TWK - Implementasi Pancasila Part 1</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TWK - Implementasi Pancasila Part 2</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TWK - Implementasi UUD 1945</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TWK - Integritas</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TWK - Gagasan Utama</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TIU - Persentase Pecahan & Desimal</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TIU - Perbandingan Senilai & Tak Senilai</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TIU - Figural Part 1</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TIU - Figural Part 2</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TIU - Pola & Analogi Kalimat</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TIU - Analisis Tabel & Jaring Kubus</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TKP - Pelayanan Publik</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TKP - Profesionalisme</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> TKP - Jejaring Kerja</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg sm:col-span-2"><i class="ph-fill ph-check-circle text-emerald-400 shrink-0"></i> Pendalaman TKP - Pelayanan Publik, Profesionalisme, Jejaring Kerja</li>
+            </ul>
+          </div>
+
+          <button onclick="switchPartTab(1); document.getElementById('pilih-slot').scrollIntoView({behavior:'smooth'})" class="w-full py-3 rounded-xl neo-btn-gold font-display font-extrabold text-sm flex items-center justify-center gap-2">
+            <span>Lihat & Ambil Slot Part 1 (Kuota 4 Orang)</span>
+            <i class="ph-bold ph-arrow-up-right"></i>
+          </button>
+        </div>
+
+        <!-- PART 2 CURRICULUM CARD -->
+        <div class="neo-card rounded-3xl p-6 sm:p-7 border-t-4 border-t-sky-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 pb-4 border-b border-white/10">
+              <div>
+                <span class="text-xs font-mono text-sky-400 font-bold uppercase">KUOTA PATUNGAN: 10 ORANG</span>
+                <h3 class="font-display font-extrabold text-2xl text-white">SKD 2027 — PART 2</h3>
+              </div>
+              <div class="text-right">
+                <span class="px-3 py-1 rounded-lg bg-sky-400 text-black font-mono font-extrabold text-xs block">
+                  START 23 JAN 2027
+                </span>
+                <span class="text-[11px] text-slate-400 font-mono">Rp20.000 / Slot</span>
+              </div>
+            </div>
+
+            <!-- Model Soal TIU Terbaru Part 2 -->
+            <div class="my-4 p-3.5 rounded-2xl bg-sky-950/40 border border-sky-400/30">
+              <div class="text-xs font-mono uppercase text-sky-300 font-bold mb-2 flex items-center gap-1.5">
+                <i class="ph-fill ph-star"></i> Dilengkapi Model Soal TIU Terbaru Part 2:
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-black/50 text-xs text-white border border-white/10">✓ Argumen Memperlemah & Memperkuat</span>
+                <span class="px-2.5 py-1 rounded-lg bg-black/50 text-xs text-white border border-white/10">✓ Kecukupan Data</span>
+                <span class="px-2.5 py-1 rounded-lg bg-black/50 text-xs text-white border border-white/10">✓ Tabel Pola Bilangan</span>
+                <span class="px-2.5 py-1 rounded-lg bg-black/50 text-xs text-white border border-white/10">✓ Kesamaan Hasil Perkalian & Pembagian</span>
+              </div>
+            </div>
+
+            <!-- List Materi Part 2 -->
+            <h4 class="font-mono text-xs uppercase tracking-wider text-slate-400 font-bold mb-3">List 15 Materi Pertemuan Part 2 (Berbeda dari Part 1):</h4>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200 mb-6">
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TWK - Pilar NKRI</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TWK - Nasionalisme dkk</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TWK - Bela Negara</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TWK - Kalimat Efektif & Kesimpulan</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TIU - Silogisme Part 1</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TIU - Silogisme Part 2</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TIU - Penalaran Analitis Part 1</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TIU - Penalaran Analitis Part 2 & Pola Bilangan</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TIU - Perbandingan Kuantitatif</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TKP - Sosial Budaya</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TKP - Teknologi, Informasi & Komunikasi</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> TKP - Anti Radikalisme</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> Pendalaman TKP - TIK, Sosbud, Anti Radikalisme</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> Pendalaman TKP - Semua Aspek</li>
+              <li class="flex items-center gap-2 bg-white/[0.03] p-2 rounded-lg sm:col-span-2"><i class="ph-fill ph-check-circle text-sky-400 shrink-0"></i> Pendalaman TIU Komprehensif</li>
+            </ul>
+          </div>
+
+          <button onclick="switchPartTab(2); document.getElementById('pilih-slot').scrollIntoView({behavior:'smooth'})" class="w-full py-3 rounded-xl bg-sky-400 hover:bg-sky-300 text-black font-display font-extrabold text-sm transition flex items-center justify-center gap-2 shadow-lg">
+            <span>Lihat & Ambil Slot Part 2 (Kuota 10 Orang)</span>
+            <i class="ph-bold ph-arrow-up-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CARA KERJA PATUNGAN -->
+    <section class="py-8 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="neo-card rounded-3xl p-6 sm:p-8 border border-white/10">
+        <h3 class="font-display font-bold text-xl text-white mb-6 flex items-center gap-2">
+          <i class="ph-fill ph-info text-yellow-400"></i>
+          <span>Alur Booking & Pembayaran Otomatis</span>
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+            <span class="font-mono text-xs text-yellow-400 font-bold">STEP 01</span>
+            <h4 class="font-display font-bold text-white text-base mt-1">Pilih Nomor Slot</h4>
+            <p class="text-xs text-slate-400 mt-1">Pilih slot kosong pada Part 1 (4 Kuota) atau Part 2 (10 Kuota), lalu isi Nama, Email, dan Metode Pembayaran.</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+            <span class="font-mono text-xs text-yellow-400 font-bold">STEP 02</span>
+            <h4 class="font-display font-bold text-white text-base mt-1">Rekening Terbuka (Hold 5 Menit)</h4>
+            <p class="text-xs text-slate-400 mt-1">Nomor rekening BCA / ShopeePay sebesar <strong>Rp20.000</strong> terbuka secara otomatis. Slot dikunci selama 5 menit untuk Anda.</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+            <span class="font-mono text-xs text-yellow-400 font-bold">STEP 03</span>
+            <h4 class="font-display font-bold text-white text-base mt-1">Kirim Konfirmasi WA</h4>
+            <p class="text-xs text-slate-400 mt-1">Klik tombol Konfirmasi WhatsApp yang otomatis menyusun format pesan lengkap beserta nomor slot & data Anda.</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+            <span class="font-mono text-xs text-yellow-400 font-bold">STEP 04</span>
+            <h4 class="font-display font-bold text-white text-base mt-1">Verifikasi Admin</h4>
+            <p class="text-xs text-slate-400 mt-1">Admin memverifikasi bukti transfer Anda dan mengaktifkan status <strong>TERVERIFIKASI / LUNAS</strong> pada slot Anda secara real-time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER WITH HIDDEN SMALL ADMIN BUTTON AT THE VERY BOTTOM -->
+  <footer class="border-t border-white/10 bg-[#070304] py-8 px-4 sm:px-6 lg:px-8 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="flex items-center gap-3">
+        <!-- Mini Footer Emblem (Matching New Graduation Cap + 3 Figures Logo) -->
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-yellow-400 to-red-600 p-0.5 shrink-0">
+          <svg viewBox="0 0 100 100" class="w-full h-full rounded-[10px] bg-[#120608]">
+            <polygon points="50,12 78,22 50,32 22,22" fill="#FACC15" />
+            <circle cx="30" cy="48" r="9" fill="#991B1B" />
+            <circle cx="70" cy="48" r="9" fill="#991B1B" />
+            <circle cx="50" cy="42" r="12" fill="#FDE047" />
+            <path d="M32 76 C34 58 42 54 50 54 C58 54 66 58 68 76 Z" fill="#FDE047" />
+            <path d="M12 70 Q32 70 50 86 Q68 70 88 70 L82 82 Q65 78 50 92 Q35 78 18 82 Z" fill="#FACC15" />
+          </svg>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="font-display font-bold text-slate-300">Patungan Bimbel <span class="text-yellow-400">SKD</span> — Kelas Privat AL FAIZ 2027</span>
+          <span>•</span>
+          <span class="font-mono text-[11px]">Project: patungan-skd-tiu</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span>Real-Time Slot Protection System</span>
+        <!-- TOMBOL KECIL TERSEMBUNYI UNTUK DASHBOARD ADMIN -->
+        <button 
+          onclick="openAdminPinModal()" 
+          title="Panel Pengelola"
+          class="w-6 h-6 rounded-md bg-white/[0.03] hover:bg-red-500/20 border border-white/5 hover:border-red-500/40 text-slate-600 hover:text-yellow-400 flex items-center justify-center transition opacity-50 hover:opacity-100"
+          aria-label="Admin Access">
+          <i class="ph-fill ph-lock-key text-[11px]"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 1: FORM BOOKING SLOT (SAAT KLIK SLOT TERSEDIA)                  -->
+  <!-- ===================================================================== -->
+  <div id="bookingFormModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="neo-card rounded-3xl max-w-md w-full p-6 sm:p-7 border border-yellow-400/40 relative animate-fadeIn">
+      <button onclick="closeBookingFormModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-slate-300">
+        <i class="ph-bold ph-x"></i>
+      </button>
+
+      <div class="flex items-center gap-2 text-xs font-mono uppercase text-yellow-400 font-bold mb-1">
+        <i class="ph-fill ph-ticket"></i>
+        <span id="modalSlotPartBadge">PART 1 • SLOT #1</span>
+      </div>
+      <h3 class="font-display font-extrabold text-2xl text-white">Isi Data Booking Slot</h3>
+      <p class="text-xs text-slate-400 mt-1">
+        Nomor rekening pembayaran & tombol WhatsApp akan terbuka setelah Anda mengunci slot ini. Waktu booking berlaku <strong class="text-yellow-300">5 menit</strong>.
+      </p>
+
+      <form id="slotBookingForm" onsubmit="submitSlotBooking(event)" class="space-y-4 mt-5">
+        <input type="hidden" id="bookingSlotId" />
+
+        <div>
+          <label class="block text-xs font-mono uppercase text-slate-300 mb-1.5 font-bold">Nama Lengkap *</label>
+          <input 
+            type="text" 
+            id="buyerNameInput" 
+            required 
+            placeholder="Contoh: Nadia Putri"
+            class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/15 focus:border-yellow-400 focus:outline-none text-sm text-white placeholder-slate-500"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono uppercase text-slate-300 mb-1.5 font-bold">Alamat Email Aktif *</label>
+          <input 
+            type="email" 
+            id="buyerEmailInput" 
+            required 
+            placeholder="nama@email.com (untuk akses Zoom/YouTube)"
+            class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/15 focus:border-yellow-400 focus:outline-none text-sm text-white placeholder-slate-500"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono uppercase text-slate-300 mb-1.5 font-bold">Pilih Metode Pembayaran *</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="cursor-pointer">
+              <input type="radio" name="paymentMethod" value="BCA" checked class="peer sr-only" />
+              <div class="p-3.5 rounded-xl bg-black/60 border border-white/15 peer-checked:border-yellow-400 peer-checked:bg-yellow-400/10 transition flex items-center justify-between">
+                <div>
+                  <span class="font-display font-extrabold text-sm text-white block">Bank BCA</span>
+                  <span class="text-[10px] text-slate-400 font-mono">Transfer Bank</span>
+                </div>
+                <i class="ph-fill ph-check-circle text-yellow-400 text-lg opacity-0 peer-checked:opacity-100"></i>
+              </div>
+            </label>
+
+            <label class="cursor-pointer">
+              <input type="radio" name="paymentMethod" value="SHOPEEPAY" class="peer sr-only" />
+              <div class="p-3.5 rounded-xl bg-black/60 border border-white/15 peer-checked:border-yellow-400 peer-checked:bg-yellow-400/10 transition flex items-center justify-between">
+                <div>
+                  <span class="font-display font-extrabold text-sm text-white block">ShopeePay</span>
+                  <span class="text-[10px] text-slate-400 font-mono">E-Wallet</span>
+                </div>
+                <i class="ph-fill ph-check-circle text-yellow-400 text-lg opacity-0 peer-checked:opacity-100"></i>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-between">
+          <span class="text-xs text-slate-300">Nominal Patungan:</span>
+          <span class="font-mono font-extrabold text-lg text-yellow-400">Rp20.000</span>
+        </div>
+
+        <button type="submit" id="submitBookingBtn" class="w-full py-3.5 rounded-xl neo-btn-gold font-display font-extrabold text-sm flex items-center justify-center gap-2">
+          <i class="ph-bold ph-lock-key-open"></i>
+          <span>Kunci Slot (5 Menit) & Buka Nomor Rekening</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 2: TIKET PEMBAYARAN EKSKLUSIF (REKENING & WA TERBUKA)            -->
+  <!-- ===================================================================== -->
+  <div id="paymentTicketModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-lg overflow-y-auto">
+    <div class="neo-card rounded-3xl max-w-lg w-full p-6 sm:p-7 border-2 border-yellow-400 relative my-8">
+      <button onclick="closePaymentTicketModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-slate-300">
+        <i class="ph-bold ph-x"></i>
+      </button>
+
+      <!-- Countdown Header -->
+      <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-white/10">
+        <div>
+          <span id="ticketStatusPill" class="px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/40 font-mono text-[11px] font-bold uppercase">
+            SLOT DIKUNCI SEMENTARA
+          </span>
+          <h3 class="font-display font-extrabold text-xl sm:text-2xl text-white mt-1">Instruksi Pembayaran</h3>
+        </div>
+        <div class="bg-red-950/90 border border-red-500/50 px-3.5 py-2 rounded-2xl text-right">
+          <span class="text-[10px] font-mono uppercase text-red-300 block">Sisa Waktu Booking</span>
+          <span id="ticketCountdownTimer" class="font-mono font-extrabold text-xl text-yellow-400">05:00</span>
+        </div>
+      </div>
+
+      <!-- Summary Data Peserta -->
+      <div class="my-4 p-4 rounded-2xl bg-black/60 border border-white/10 space-y-2 text-xs">
+        <div class="flex justify-between">
+          <span class="text-slate-400">Nomor Slot & Part:</span>
+          <span id="ticketSlotLabel" class="font-mono font-bold text-yellow-400">-</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Nama Peserta:</span>
+          <span id="ticketBuyerName" class="font-semibold text-white">-</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Email:</span>
+          <span id="ticketBuyerEmail" class="font-mono text-slate-200">-</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Metode Pilihan:</span>
+          <span id="ticketPaymentMethod" class="font-mono font-bold text-sky-400">-</span>
+        </div>
+        <div class="flex justify-between pt-2 border-t border-white/10">
+          <span class="text-slate-300 font-semibold">Total Transfer:</span>
+          <span class="font-mono font-extrabold text-base text-emerald-400">Rp20.000</span>
+        </div>
+      </div>
+
+      <!-- UNLOCKED PAYMENT ACCOUNTS (PROTECTED UNTIL BOOKED) -->
+      <div class="space-y-3 mb-5">
+        <div class="text-xs font-mono uppercase text-yellow-300 font-bold flex items-center gap-1.5">
+          <i class="ph-fill ph-key"></i> Nomor Rekening Pembayaran Resmi:
+        </div>
+
+        <div id="unlockedPaymentAccountsBox" class="space-y-2.5">
+          <!-- Populated dynamically ONLY when booking is active -->
+        </div>
+      </div>
+
+      <!-- Preview Format Pesan WA -->
+      <div class="mb-5">
+        <div class="flex items-center justify-between text-xs mb-1.5">
+          <span class="font-mono text-slate-400 uppercase font-bold">Format Pesan Konfirmasi WhatsApp:</span>
+          <button onclick="copyWhatsAppText()" class="text-yellow-400 hover:underline font-mono text-[11px] flex items-center gap-1">
+            <i class="ph-bold ph-copy"></i> Salin Pesan
+          </button>
+        </div>
+        <pre id="waMessagePreview" class="p-3.5 rounded-xl bg-black/70 border border-white/10 text-[11px] font-mono text-slate-300 whitespace-pre-wrap leading-relaxed"></pre>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-2.5">
+        <button onclick="confirmAndOpenWhatsApp()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-black font-display font-extrabold text-sm shadow-lg shadow-emerald-900/50 transition flex items-center justify-center gap-2">
+          <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+          <span>Konfirmasi Pembayaran via WhatsApp Sekarang</span>
+        </button>
+
+        <button onclick="cancelMyBooking()" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-red-500/20 text-slate-400 hover:text-red-300 border border-white/10 text-xs font-mono transition">
+          Batalkan Booking & Lepas Slot Ini
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 3: CEK / PULIHKAN TIKET BOOKING DENGAN EMAIL                    -->
+  <!-- ===================================================================== -->
+  <div id="recoverTicketModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="neo-card rounded-3xl max-w-md w-full p-6 border border-white/20 relative">
+      <button onclick="closeRecoverTicketModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-slate-300">
+        <i class="ph-bold ph-x"></i>
+      </button>
+      <h3 class="font-display font-bold text-xl text-white">Cek Tiket Booking Saya</h3>
+      <p class="text-xs text-slate-400 mt-1">
+        Masukkan alamat email yang Anda gunakan saat mengisi slot untuk membuka kembali detail rekening pembayaran dan tombol konfirmasi WhatsApp.
+      </p>
+      <form onsubmit="handleRecoverTicket(event)" class="mt-4 space-y-4">
+        <input 
+          type="email" 
+          id="recoverEmailInput" 
+          required 
+          placeholder="Masukkan email saat booking..."
+          class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/15 focus:border-yellow-400 focus:outline-none text-sm text-white"
+        />
+        <button type="submit" class="w-full py-3 rounded-xl neo-btn-gold font-display font-bold text-sm">
+          Cari Slot & Buka Instruksi Pembayaran
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 4: LOGIN PIN ADMIN (1140)                                       -->
+  <!-- ===================================================================== -->
+  <div id="adminPinModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="neo-card rounded-3xl max-w-sm w-full p-6 border border-red-500/40 relative text-center">
+      <button onclick="closeAdminPinModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-slate-300">
+        <i class="ph-bold ph-x"></i>
+      </button>
+
+      <div class="w-12 h-12 rounded-2xl bg-red-500/20 border border-red-500/40 text-yellow-400 flex items-center justify-center mx-auto mb-3">
+        <i class="ph-fill ph-shield-star text-2xl"></i>
+      </div>
+      <h3 class="font-display font-extrabold text-xl text-white">Akses Dashboard Admin</h3>
+      <p class="text-xs text-slate-400 mt-1">Login menggunakan akun admin Firebase Email/Password dan PIN website.</p>
+
+      <form onsubmit="verifyAdminPin(event)" class="mt-5 space-y-3">
+        <input
+          type="email"
+          id="adminEmailInput"
+          autocomplete="username"
+          required
+          placeholder="Email admin Firebase"
+          class="w-full px-4 py-3 rounded-xl bg-black/70 border border-white/20 focus:border-yellow-400 focus:outline-none text-sm text-white"
+        />
+        <input
+          type="password"
+          id="adminPasswordInput"
+          autocomplete="current-password"
+          required
+          placeholder="Password akun admin Firebase"
+          class="w-full px-4 py-3 rounded-xl bg-black/70 border border-white/20 focus:border-yellow-400 focus:outline-none text-sm text-white"
+        />
+        <input
+          type="password"
+          id="adminPinInput"
+          maxlength="6"
+          required
+          placeholder="PIN website"
+          class="w-full text-center tracking-[0.6em] font-mono font-extrabold text-2xl py-3 rounded-xl bg-black/70 border border-white/20 focus:border-yellow-400 focus:outline-none text-yellow-400"
+        />
+        <button type="submit" class="w-full py-3 rounded-xl neo-btn-gold font-display font-extrabold text-sm">
+          Login & Buka Dashboard Admin
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 5: FULL ADMIN DASHBOARD (VERIFIKASI & FIREBASE RTDB CONNECTOR)  -->
+  <!-- ===================================================================== -->
+  <div id="adminDashboardModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-xl overflow-y-auto">
+    <div class="neo-card rounded-3xl max-w-6xl w-full p-5 sm:p-8 border border-yellow-400/50 my-auto max-h-[92vh] flex flex-col">
+      
+      <!-- Top Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-white/15 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-yellow-400 text-black flex items-center justify-center font-display font-extrabold">
+            <i class="ph-fill ph-sliders-horizontal text-xl"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="font-display font-extrabold text-xl sm:text-2xl text-white">DASHBOARD ADMIN PATUNGAN</h2>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono text-[10px] font-bold">
+                VERIFIED PIN
+              </span>
+            </div>
+            <p class="text-xs text-slate-400 font-mono">
+              Project: <strong class="text-white">Patungan SKD TIU</strong> (ID: <code class="text-yellow-300">patungan-skd-tiu</code> • No: <code class="text-yellow-300">721864371613</code>)
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="toggleFirebaseSetupPanel()" class="px-3.5 py-2 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-400/40 text-xs font-mono font-bold flex items-center gap-1.5">
+            <i class="ph-fill ph-database"></i>
+            <span>Koneksi Firebase RTDB</span>
+          </button>
+          <button onclick="closeAdminDashboardModal()" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-mono font-bold flex items-center gap-1">
+            <i class="ph-bold ph-x"></i> Tutup
+          </button>
+        </div>
+      </div>
+
+      <!-- Scrollable Body -->
+      <div class="overflow-y-auto flex-1 pr-1 space-y-6 py-5">
+        
+        <!-- FIREBASE REALTIME DATABASE CONNECTOR PANEL (COLLAPSIBLE) -->
+        <div id="firebaseSetupPanel" class="hidden p-5 rounded-2xl bg-sky-950/40 border border-sky-400/40 space-y-4">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-[11px] font-mono uppercase text-sky-300 font-bold">PLUG & PLAY FIREBASE REALTIME DATABASE</span>
+              <h4 class="font-display font-bold text-lg text-white">Konfigurasi Project: Patungan SKD TIU (<code class="text-yellow-300">patungan-skd-tiu</code>)</h4>
+              <p class="text-xs text-slate-300 mt-1">
+                Website ini menggunakan URL Firebase Realtime Database project Anda secara otomatis. Tidak perlu memasukkan konfigurasi atau membuat project baru:
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs font-mono">
+            <div class="p-3 rounded-xl bg-black/50 border border-white/10">
+              <span class="text-slate-400 block text-[10px]">PROJECT NAME</span>
+              <strong class="text-white">Patungan SKD TIU</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-black/50 border border-white/10">
+              <span class="text-slate-400 block text-[10px]">PROJECT ID</span>
+              <strong class="text-yellow-400">patungan-skd-tiu</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-black/50 border border-white/10">
+              <span class="text-slate-400 block text-[10px]">PROJECT NUMBER</span>
+              <strong class="text-sky-400">721864371613</strong>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input 
+              type="url" 
+              id="customRtdbUrlInput"
+              value="https://patungan-skd-tiu-default-rtdb.asia-southeast1.firebasedatabase.app"
+              readonly
+              class="flex-1 px-4 py-2.5 rounded-xl bg-black/70 border border-white/20 text-xs font-mono text-white"
+            />
+            <button onclick="saveCustomRtdbUrl()" class="px-4 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-300 text-black font-display font-bold text-xs shrink-0">
+              Cek Koneksi
+            </button>
+          </div>
+          <p class="text-[11px] text-slate-400 font-mono">
+            Koneksi menggunakan node khusus <code class="text-emerald-300">/public/patunganSKDTIU/slots</code>. Project dan node Firebase lainnya tidak diubah. Jika muncul pesan akses ditolak, jangan membuka seluruh database untuk publik; periksa pengaturan akses Firebase terlebih dahulu.
+          </p>
+        </div>
+
+        <!-- Admin Quick Stats & Hidden Payment Info Overview -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
+            <span class="text-[11px] font-mono text-slate-400 uppercase">Total Slot Lunas</span>
+            <div id="adminStatVerified" class="text-2xl font-mono font-extrabold text-emerald-400 mt-1">0 / 14</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
+            <span class="text-[11px] font-mono text-slate-400 uppercase">Menunggu Verifikasi / Hold</span>
+            <div id="adminStatPending" class="text-2xl font-mono font-extrabold text-amber-400 mt-1">0 Slot</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
+            <span class="text-[11px] font-mono text-slate-400 uppercase">Dana Terkumpul</span>
+            <div id="adminStatRevenue" class="text-2xl font-mono font-extrabold text-yellow-400 mt-1">Rp0</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/10">
+            <span class="text-[11px] font-mono text-slate-400 uppercase">Rekening & WA Admin (Terproteksi)</span>
+            <div class="text-xs font-mono text-slate-200 mt-1 space-y-0.5">
+              <div>BCA: <strong class="text-yellow-300">7155312297</strong></div>
+              <div>ShopeePay: <strong class="text-sky-300">085175383400</strong></div>
+              <div>WhatsApp: <strong class="text-sky-300">081522961680</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PART 1 ADMIN TABLE (4 SLOTS) -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display font-bold text-lg text-yellow-400 flex items-center gap-2">
+              <i class="ph-fill ph-number-circle-one"></i>
+              <span>Manajemen Slot PART 1 (Kuota 4 Orang)</span>
+            </h3>
+            <span class="text-xs font-mono text-slate-400">Start: 14 November 2026</span>
+          </div>
+          <div class="overflow-x-auto rounded-2xl border border-white/10 bg-black/50">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="border-b border-white/10 text-slate-400 font-mono uppercase text-[11px] bg-white/[0.02]">
+                  <th class="py-3 px-4">Slot</th>
+                  <th class="py-3 px-4">Status</th>
+                  <th class="py-3 px-4">Nama Peserta</th>
+                  <th class="py-3 px-4">Email</th>
+                  <th class="py-3 px-4">Metode</th>
+                  <th class="py-3 px-4">Sisa Timer</th>
+                  <th class="py-3 px-4 text-right">Tindakan Admin</th>
+                </tr>
+              </thead>
+              <tbody id="adminTablePart1" class="divide-y divide-white/10">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- PART 2 ADMIN TABLE (10 SLOTS) -->
+        <div class="space-y-3 pt-2">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display font-bold text-lg text-sky-400 flex items-center gap-2">
+              <i class="ph-fill ph-number-circle-two"></i>
+              <span>Manajemen Slot PART 2 (Kuota 10 Orang)</span>
+            </h3>
+            <span class="text-xs font-mono text-slate-400">Start: 23 Januari 2027</span>
+          </div>
+          <div class="overflow-x-auto rounded-2xl border border-white/10 bg-black/50">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="border-b border-white/10 text-slate-400 font-mono uppercase text-[11px] bg-white/[0.02]">
+                  <th class="py-3 px-4">Slot</th>
+                  <th class="py-3 px-4">Status</th>
+                  <th class="py-3 px-4">Nama Peserta</th>
+                  <th class="py-3 px-4">Email</th>
+                  <th class="py-3 px-4">Metode</th>
+                  <th class="py-3 px-4">Sisa Timer</th>
+                  <th class="py-3 px-4 text-right">Tindakan Admin</th>
+                </tr>
+              </thead>
+              <tbody id="adminTablePart2" class="divide-y divide-white/10">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-[60] flex flex-col gap-2 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+  <!-- ===================================================================== -->
+  <!-- FIREBASE & APPLICATION LOGIC                                          -->
+  <!-- ===================================================================== -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import {
+      getDatabase,
+      ref,
+      onValue,
+      get,
+      set,
+      remove,
+      runTransaction
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
+
+    // Konfigurasi Web App resmi dari Firebase Console milik pengguna.
+    const firebaseConfig = {
+      apiKey: "AIzaSyD9AjwX5GCUNE-c_mmkT0SquxkFjahvcgY",
+      authDomain: "patungan-skd-tiu.firebaseapp.com",
+      databaseURL: "https://patungan-skd-tiu-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "patungan-skd-tiu",
+      storageBucket: "patungan-skd-tiu.firebasestorage.app",
+      messagingSenderId: "721864371613",
+      appId: "1:721864371613:web:c23a8173cbd580267d9374",
+      measurementId: "G-DTDBHH5WQ8"
+    };
+
+    // Jalur khusus aplikasi ini. Node dan aplikasi Firebase lain tidak disentuh.
+    const SLOT_PUBLIC_PATH = "public/patunganSKDTIU/slots";
+    const SLOT_PRIVATE_PATH = "private/patunganSKDTIU/byUid";
+
+    // Konstanta Durasi Booking = 5 Menit (300.000 ms)
+    const BOOKING_DURATION_MS = 5 * 60 * 1000;
+    const ADMIN_PIN_CODE = "1140";
+
+    // Informasi Admin & Rekening disimpan secara terproteksi di memori aplikasi,
+    // TIDAK ditampilkan di halaman publik dan hanya di-render saat sesi slot valid terbuka.
+    const PROTECTED_PAYMENT_DATA = {
+      waNumber: "6281522961680",
+      waDisplay: "081522961680",
+      bcaNumber: "7155312297",
+      shopeepayNumber: "085175383400",
+      nominalDisplay: "Rp20.000",
+      nominalValue: 20000
+    };
+
+    // State Aplikasi
+    let currentSelectedPart = 1; // 1 (4 slot) atau 2 (10 slot)
+    let slotsState = {};         // Menyimpan 14 slot (part1_slot_1..4, part2_slot_1..10)
+    let myActiveSlotId = null;   // ID slot yang sedang dibooking oleh sesi pengguna ini
+    let mySessionToken = crypto.randomUUID();
+    let isAdminAuthenticated = false;
+    const customRtdbUrl = firebaseConfig.databaseURL;
+
+    // Inisialisasi State Default untuk 14 Slot (Part 1 = 4 orang, Part 2 = 10 orang)
+    function createDefaultSlots() {
+      const defaults = {};
+      for (let i = 1; i <= 4; i++) {
+        const id = `part1_slot_${i}`;
+        defaults[id] = {
+          id,
+          part: 1,
+          slotNumber: i,
+          status: "available",
+          buyerName: "",
+          buyerEmail: "",
+          paymentMethod: "",
+          bookedAt: 0,
+          expiresAt: 0,
+          sessionToken: "",
+          ownerUid: "",
+          maskedName: ""
+        };
+      }
+      for (let i = 1; i <= 10; i++) {
+        const id = `part2_slot_${i}`;
+        defaults[id] = {
+          id,
+          part: 2,
+          slotNumber: i,
+          status: "available",
+          buyerName: "",
+          buyerEmail: "",
+          paymentMethod: "",
+          bookedAt: 0,
+          expiresAt: 0,
+          sessionToken: "",
+          ownerUid: "",
+          maskedName: ""
+        };
+      }
+      return defaults;
+    }
+
+    slotsState = createDefaultSlots();
+
+    // =========================================================================
+    // FIREBASE AUTH + REALTIME DATABASE — LIVE LISTENER
+    // =========================================================================
+    let firebaseApp = null;
+    let auth = null;
+    let firebaseUser = null;
+    let isFirebaseAdmin = false;
+    let rtdb = null;
+    let rtdbReady = false;
+    let rtdbInitializing = false;
+    let slotsListenerUnsubscribe = null;
+    let snapshotRevision = 0;
+    const expiredReleaseInFlight = new Set();
+    const ACTIVE_SLOT_STORAGE_KEY = "patunganSKDTIU_activeSlot";
+
+    function publicSlotFrom(slotData, ownerUid) {
+      const status = slotData.status || "available";
+      const available = status === "available";
+      return {
+        id: slotData.id,
+        part: Number(slotData.part),
+        slotNumber: Number(slotData.slotNumber),
+        status,
+        ownerUid: available ? "" : (ownerUid || ""),
+        maskedName: available ? "" : maskParticipantName(slotData.buyerName || slotData.maskedName || "Peserta"),
+        bookedAt: available ? 0 : Number(slotData.bookedAt || Date.now()),
+        expiresAt: available ? 0 : Number(slotData.expiresAt || 0),
+        updatedAt: Date.now()
+      };
+    }
+
+    function privateSlotPath(ownerUid, slotId) {
+      return `${SLOT_PRIVATE_PATH}/${ownerUid}/slots/${slotId}`;
+    }
+
+    async function loadPrivateSlot(slot) {
+      if (!rtdb || !firebaseUser || !slot?.ownerUid) return null;
+      if (!isFirebaseAdmin && slot.ownerUid !== firebaseUser.uid) return null;
+      try {
+        const snap = await get(ref(rtdb, privateSlotPath(slot.ownerUid, slot.id)));
+        return snap.exists() ? snap.val() : null;
+      } catch (error) {
+        console.warn("Data privat slot tidak dapat dibaca:", slot.id, error);
+        return null;
+      }
+    }
+
+    async function hydratePrivateSlotData(publicSlots, revision) {
+      const jobs = Object.values(publicSlots).map(async (slot) => {
+        if (!slot.ownerUid) return;
+        if (!isFirebaseAdmin && slot.ownerUid !== firebaseUser?.uid) return;
+        const privateData = await loadPrivateSlot(slot);
+        if (privateData && revision === snapshotRevision) {
+          slotsState[slot.id] = { ...slotsState[slot.id], ...privateData };
+        }
+      });
+      await Promise.all(jobs);
+    }
+
+    async function initRealtimeDatabase() {
+      if (rtdbReady || rtdbInitializing) return;
+      rtdbInitializing = true;
+      updateSyncBadge("Menghubungkan Firebase...", false);
+
+      try {
+        if (!firebaseApp) {
+          firebaseApp = initializeApp(firebaseConfig, "patungan-skd-tiu-website");
+        }
+        auth = getAuth(firebaseApp);
+        if (!auth.currentUser) {
+          await signInAnonymously(auth);
+        }
+        firebaseUser = auth.currentUser;
+        if (!firebaseUser) throw new Error("Firebase Anonymous Authentication belum menghasilkan UID.");
+        console.info("[Patungan SKD TIU] Firebase anonymous UID:", firebaseUser.uid);
+
+        rtdb = getDatabase(firebaseApp, firebaseConfig.databaseURL);
+
+        // Cek apakah UID browser ini sudah didaftarkan sebagai admin.
+        try {
+          const adminSnap = await get(ref(rtdb, `adminUsers/${firebaseUser.uid}`));
+          isFirebaseAdmin = adminSnap.val() === true;
+        } catch (adminCheckError) {
+          isFirebaseAdmin = false;
+          console.warn("Pemeriksaan admin dilewati:", adminCheckError);
+        }
+
+        const slotsRef = ref(rtdb, SLOT_PUBLIC_PATH);
+        slotsListenerUnsubscribe?.();
+        slotsListenerUnsubscribe = onValue(
+          slotsRef,
+          async (snapshot) => {
+            const revision = ++snapshotRevision;
+            const remoteSlots = snapshot.val() || {};
+            const defaults = createDefaultSlots();
+            slotsState = { ...defaults };
+
+            Object.entries(remoteSlots).forEach(([slotId, remoteSlot]) => {
+              if (!defaults[slotId] || !remoteSlot || typeof remoteSlot !== "object") return;
+              slotsState[slotId] = {
+                ...defaults[slotId],
+                ...remoteSlot,
+                buyerName: "",
+                buyerEmail: "",
+                paymentMethod: "",
+                sessionToken: ""
+              };
+            });
+
+            await hydratePrivateSlotData(slotsState, revision);
+            if (revision !== snapshotRevision) return;
+
+            rtdbReady = true;
+            const savedSlotId = localStorage.getItem(ACTIVE_SLOT_STORAGE_KEY);
+            const ownActiveSlot = Object.values(slotsState).find((slot) =>
+              slot.ownerUid === firebaseUser.uid &&
+              ["booked", "waiting_verification"].includes(slot.status)
+            );
+            if (savedSlotId && slotsState[savedSlotId]?.ownerUid === firebaseUser.uid) {
+              myActiveSlotId = savedSlotId;
+            } else if (ownActiveSlot) {
+              myActiveSlotId = ownActiveSlot.id;
+              localStorage.setItem(ACTIVE_SLOT_STORAGE_KEY, ownActiveSlot.id);
+            } else {
+              myActiveSlotId = null;
+              localStorage.removeItem(ACTIVE_SLOT_STORAGE_KEY);
+            }
+
+            renderAllUI();
+            checkAndCleanExpiredSlots();
+            updateSyncBadge("Firebase RTDB Real-Time", true);
+          },
+          (error) => {
+            console.error("Firebase RTDB listener error:", error);
+            rtdbReady = false;
+            updateSyncBadge(error?.code === "PERMISSION_DENIED" ? "Akses RTDB ditolak" : "RTDB terputus", false);
+          }
+        );
+      } catch (err) {
+        console.error("Firebase initialization/auth error:", err);
+        rtdbReady = false;
+        const code = err?.code || "";
+        updateSyncBadge(code.includes("unauthorized") ? "Auth Firebase ditolak" : "Gagal menghubungkan RTDB", false);
+      } finally {
+        rtdbInitializing = false;
+      }
+    }
+
+    async function saveSlotToCloud(slotData) {
+      if (!rtdb || !rtdbReady || !firebaseUser) {
+        showToast("Firebase belum siap. Tunggu koneksi selesai.", "warning");
+        return false;
+      }
+
+      const existing = slotsState[slotData.id] || createDefaultSlots()[slotData.id];
+      const oldOwnerUid = existing.ownerUid || slotData.ownerUid || "";
+      const targetOwnerUid = slotData.status === "available"
+        ? ""
+        : (slotData.ownerUid || oldOwnerUid || (isFirebaseAdmin ? firebaseUser.uid : ""));
+
+      if (slotData.status !== "available" && !targetOwnerUid) {
+        showToast("Identitas pemilik slot tidak ditemukan.", "error");
+        return false;
+      }
+      if (!isFirebaseAdmin && targetOwnerUid !== firebaseUser.uid && slotData.status !== "available") {
+        showToast("Kamu hanya dapat mengubah booking milikmu sendiri.", "error");
+        return false;
+      }
+
+      const publicData = publicSlotFrom(slotData, targetOwnerUid);
+      const privateData = slotData.status === "available" ? null : {
+        slotId: slotData.id,
+        part: Number(slotData.part),
+        slotNumber: Number(slotData.slotNumber),
+        ownerUid: targetOwnerUid,
+        buyerName: String(slotData.buyerName || ""),
+        buyerEmail: String(slotData.buyerEmail || ""),
+        paymentMethod: String(slotData.paymentMethod || ""),
+        bookedAt: Number(slotData.bookedAt || Date.now()),
+        expiresAt: Number(slotData.expiresAt || 0),
+        updatedAt: Date.now()
+      };
+
+      try {
+        if (privateData) {
+          await set(ref(rtdb, privateSlotPath(targetOwnerUid, slotData.id)), privateData);
+        }
+
+        const result = await runTransaction(
+          ref(rtdb, `${SLOT_PUBLIC_PATH}/${slotData.id}`),
+          (current) => {
+            if (isFirebaseAdmin) return publicData;
+            if (!current) return;
+            if (slotData.status === "waiting_verification" && current.ownerUid === firebaseUser.uid && targetOwnerUid === firebaseUser.uid) {
+              return publicData;
+            }
+            if (slotData.status === "available" && current.ownerUid === firebaseUser.uid) {
+              return publicData;
+            }
+            if (slotData.status === "available" && current.status === "booked" && Number(current.expiresAt || 0) <= Date.now()) {
+              return publicData;
+            }
+            return;
+          },
+          { applyLocally: false }
+        );
+
+        if (!result.committed) {
+          showToast("Perubahan ditolak. Slot mungkin sudah berubah atau akses admin belum aktif.", "error");
+          return false;
+        }
+
+        if (!privateData && oldOwnerUid) {
+          try { await remove(ref(rtdb, privateSlotPath(oldOwnerUid, slotData.id))); }
+          catch (removeError) { console.warn("Data privat lama belum terhapus:", removeError); }
+        }
+
+        slotsState[slotData.id] = {
+          ...createDefaultSlots()[slotData.id],
+          ...publicData,
+          ...(privateData || {})
+        };
+        renderAllUI();
+        return true;
+      } catch (err) {
+        console.error("Gagal menyimpan slot ke Firebase:", err);
+        updateSyncBadge("Gagal menyimpan ke RTDB", false);
+        showToast("Gagal menyimpan. Periksa Rules Firebase.", "error");
+        return false;
+      }
+    }
+
+    async function releaseExpiredSlot(slotId) {
+      if (!rtdb || !rtdbReady || expiredReleaseInFlight.has(slotId)) return;
+      expiredReleaseInFlight.add(slotId);
+      try {
+        const result = await runTransaction(
+          ref(rtdb, `${SLOT_PUBLIC_PATH}/${slotId}`),
+          (current) => {
+            if (!current || current.status !== "booked") return;
+            if (!current.expiresAt || Date.now() <= Number(current.expiresAt)) return;
+            return {
+              ...current,
+              status: "available",
+              ownerUid: "",
+              maskedName: "",
+              bookedAt: 0,
+              expiresAt: 0,
+              updatedAt: Date.now()
+            };
+          },
+          { applyLocally: false }
+        );
+
+        if (result.committed && result.snapshot.exists()) {
+          const wasMine = myActiveSlotId === slotId;
+          slotsState[slotId] = {
+            ...createDefaultSlots()[slotId],
+            ...result.snapshot.val(),
+            buyerName: "",
+            buyerEmail: "",
+            paymentMethod: ""
+          };
+          if (wasMine) {
+            myActiveSlotId = null;
+            localStorage.removeItem(ACTIVE_SLOT_STORAGE_KEY);
+            closePaymentTicketModal();
+            showToast("Waktu booking 5 menit telah habis. Slot kembali tersedia.", "warning");
+          }
+          renderAllUI();
+        }
+      } catch (err) {
+        console.error("Gagal melepas slot kedaluwarsa:", err);
+      } finally {
+        expiredReleaseInFlight.delete(slotId);
+      }
+    }
+
+    function updateSyncBadge(text, isOnline) {
+      const badge = document.getElementById("syncBadge");
+      if (!badge) return;
+      if (isOnline) {
+        badge.className = "text-[11px] font-mono px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center gap-1";
+        badge.innerHTML = `<i class="ph-fill ph-cloud-check"></i> ${text}`;
+      } else {
+        badge.className = "text-[11px] font-mono px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30 flex items-center gap-1";
+        badge.innerHTML = `<i class="ph-fill ph-lightning"></i> ${text}`;
+      }
+    }
+
+    // =========================================================================
+    // LOGIKA TIMER 5 MENIT & EXPIRATION OTOMATIS
+    // =========================================================================
+    function getEffectiveStatus(slot) {
+      if (!slot) return "available";
+      if (slot.status === "verified") return "verified";
+      // Jika status booked atau waiting_verification tapi waktu 5 menit sudah lewat:
+      if (slot.status === "booked") {
+        if (Date.now() > slot.expiresAt) {
+          return "available";
+        }
+        return "booked";
+      }
+      if (slot.status === "waiting_verification") {
+        // Apabila pembeli sudah klik konfirmasi WA, kita tetap tampilkan 'waiting_verification'
+        // agar admin bisa memverifikasi, atau jika expired lebih dari 30 menit tanpa verifikasi bisa dilihat admin
+        return "waiting_verification";
+      }
+      return "available";
+    }
+
+    function checkAndCleanExpiredSlots() {
+      if (!rtdbReady || !rtdb) return;
+      const now = Date.now();
+      Object.values(slotsState).forEach((slot) => {
+        if (slot.status === "booked" && slot.expiresAt > 0 && now > Number(slot.expiresAt)) {
+          // Gunakan transaksi agar timer lama tidak menimpa booking baru.
+          releaseExpiredSlot(slot.id);
+        }
+      });
+    }
+
+    // Interval 1 detik untuk update seluruh countdown timer secara real-time
+    setInterval(() => {
+      checkAndCleanExpiredSlots();
+      updateLiveTimersInDOM();
+    }, 1000);
+
+    function formatRemainingTime(expiresAt) {
+      const diff = Math.max(0, expiresAt - Date.now());
+      const totalSeconds = Math.floor(diff / 1000);
+      const mins = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
+      const secs = String(totalSeconds % 60).padStart(2, "0");
+      return `${mins}:${secs}`;
+    }
+
+    function maskParticipantName(name) {
+      if (!name) return "Peserta";
+      const parts = String(name).trim().split(" ");
+      return parts.map((p, idx) => {
+        if (idx === 0) return p.length > 2 ? p.slice(0, 3) + "**" : p;
+        return p.charAt(0) + "***";
+      }).join(" ");
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[char]));
+    }
+
+    // =========================================================================
+    // RENDER UI (SLOTS MATRIX, HERO PROGRESS, ADMIN TABLES, ACTIVE TICKET)
+    // =========================================================================
+    function renderAllUI() {
+      renderHeroCounters();
+      renderSlotsGrid();
+      renderActiveBookingNav();
+      if (isAdminAuthenticated) {
+        renderAdminTables();
+      }
+      if (myActiveSlotId && !document.getElementById("paymentTicketModal").classList.contains("hidden")) {
+        populatePaymentTicketModal(myActiveSlotId);
+      }
+    }
+
+    function renderHeroCounters() {
+      // Hitung slot terisi / dibooking untuk Part 1 (4 slot) dan Part 2 (10 slot)
+      let p1Filled = 0;
+      for (let i = 1; i <= 4; i++) {
+        const st = getEffectiveStatus(slotsState[`part1_slot_${i}`]);
+        if (st !== "available") p1Filled++;
+      }
+      let p2Filled = 0;
+      for (let i = 1; i <= 10; i++) {
+        const st = getEffectiveStatus(slotsState[`part2_slot_${i}`]);
+        if (st !== "available") p2Filled++;
+      }
+
+      document.getElementById("heroPart1Count").textContent = `${p1Filled}/4`;
+      document.getElementById("heroPart1Bar").style.width = `${(p1Filled / 4) * 100}%`;
+
+      document.getElementById("heroPart2Count").textContent = `${p2Filled}/10`;
+      document.getElementById("heroPart2Bar").style.width = `${(p2Filled / 10) * 100}%`;
+    }
+
+    function renderSlotsGrid() {
+      const container = document.getElementById("slotsGridContainer");
+      if (!container) return;
+
+      const totalSlots = currentSelectedPart === 1 ? 4 : 10;
+      // Sesuaikan jumlah kolom grid agar proporsional (Part 1 = 4 kolom, Part 2 = 5 kolom di layar besar)
+      container.className = currentSelectedPart === 1
+        ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+        : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4";
+
+      let html = "";
+      for (let i = 1; i <= totalSlots; i++) {
+        const id = `part${currentSelectedPart}_slot_${i}`;
+        const slot = slotsState[id];
+        const status = getEffectiveStatus(slot);
+        const isMine = (myActiveSlotId === id || (firebaseUser && slot.ownerUid === firebaseUser.uid));
+
+        if (status === "available") {
+          html += `
+            <div onclick="handleSlotCardClick('${id}')" class="slot-card available cursor-pointer rounded-2xl p-5 bg-gradient-to-b from-white/[0.05] to-black/70 border border-white/15 flex flex-col justify-between min-h-[175px] group relative overflow-hidden">
+              <div class="flex items-center justify-between">
+                <span class="font-mono font-extrabold text-lg text-white group-hover:text-yellow-400 transition">
+                  SLOT #${String(i).padStart(2, '0')}
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono text-[10px] font-bold uppercase">
+                  TERSEDIA
+                </span>
+              </div>
+
+              <div class="my-4">
+                <div class="text-xs text-slate-400">Part ${currentSelectedPart} • Kuota #${i}</div>
+                <div class="font-display font-extrabold text-xl text-yellow-400 mt-0.5">Rp20.000</div>
+              </div>
+
+              <div class="w-full py-2.5 rounded-xl bg-white/10 group-hover:bg-yellow-400 group-hover:text-black text-white font-display font-bold text-xs flex items-center justify-center gap-1.5 transition">
+                <span>Ambil Slot Ini</span>
+                <i class="ph-bold ph-arrow-right"></i>
+              </div>
+            </div>
+          `;
+        } else if (status === "booked") {
+          const remaining = formatRemainingTime(slot.expiresAt);
+          html += `
+            <div onclick="handleSlotCardClick('${id}')" class="slot-card cursor-pointer rounded-2xl p-5 bg-gradient-to-b from-amber-950/50 to-black/80 border-2 ${isMine ? 'border-yellow-400' : 'border-amber-500/50'} flex flex-col justify-between min-h-[175px] relative overflow-hidden">
+              <div class="flex items-center justify-between">
+                <span class="font-mono font-extrabold text-lg text-amber-300">
+                  SLOT #${String(i).padStart(2, '0')}
+                </span>
+                <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 font-mono text-[10px] font-bold flex items-center gap-1">
+                  <i class="ph-fill ph-timer animate-spin"></i>
+                  <span data-timer-slot="${id}">${remaining}</span>
+                </span>
+              </div>
+
+              <div class="my-3">
+                <div class="text-[11px] font-mono text-amber-200/80 uppercase">Sedang Dibooking:</div>
+                <div class="font-display font-bold text-base text-white truncate mt-0.5">
+                  ${isMine ? escapeHtml((slot.buyerName || "Booking Anda") + ' (Anda)') : escapeHtml(slot.maskedName || maskParticipantName(slot.buyerName))}
+                </div>
+                <div class="text-[11px] text-slate-400 font-mono mt-0.5">Menunggu Transfer...</div>
+              </div>
+
+              <div class="w-full py-2 rounded-xl ${isMine ? 'bg-yellow-400 text-black' : 'bg-amber-500/20 text-amber-200'} font-mono font-bold text-[11px] text-center">
+                ${isMine ? 'Buka Rekening & WA →' : 'Dikunci Sementara (5m)'}
+              </div>
+            </div>
+          `;
+        } else if (status === "waiting_verification") {
+          html += `
+            <div onclick="handleSlotCardClick('${id}')" class="slot-card cursor-pointer rounded-2xl p-5 bg-gradient-to-b from-sky-950/60 to-black/80 border border-sky-400/50 flex flex-col justify-between min-h-[175px]">
+              <div class="flex items-center justify-between">
+                <span class="font-mono font-extrabold text-lg text-sky-300">
+                  SLOT #${String(i).padStart(2, '0')}
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-400/40 font-mono text-[10px] font-bold">
+                  VERIFIKASI
+                </span>
+              </div>
+
+              <div class="my-3">
+                <div class="text-[11px] font-mono text-sky-300/80 uppercase">Konfirmasi Terkirim:</div>
+                <div class="font-display font-bold text-base text-white truncate mt-0.5">
+                  ${isMine ? escapeHtml((slot.buyerName || "Booking Anda") + ' (Anda)') : escapeHtml(slot.maskedName || maskParticipantName(slot.buyerName))}
+                </div>
+                <div class="text-[11px] text-slate-400 font-mono mt-0.5">Menunggu Cek Admin</div>
+              </div>
+
+              <div class="w-full py-2 rounded-xl bg-sky-500/20 text-sky-200 font-mono font-bold text-[11px] text-center">
+                ${isMine ? 'Lihat Tiket Saya →' : 'Sedang Diverifikasi'}
+              </div>
+            </div>
+          `;
+        } else if (status === "verified") {
+          html += `
+            <div class="slot-card rounded-2xl p-5 bg-gradient-to-b from-rose-950/50 to-black/85 border border-rose-500/40 flex flex-col justify-between min-h-[175px] opacity-95">
+              <div class="flex items-center justify-between">
+                <span class="font-mono font-extrabold text-lg text-rose-300">
+                  SLOT #${String(i).padStart(2, '0')}
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono text-[10px] font-bold flex items-center gap-1">
+                  <i class="ph-fill ph-seal-check"></i> LUNAS
+                </span>
+              </div>
+
+              <div class="my-3">
+                <div class="text-[11px] font-mono text-slate-400 uppercase">Peserta Terdaftar:</div>
+                <div class="font-display font-bold text-base text-white truncate mt-0.5">
+                  ${slot.maskedName || maskParticipantName(slot.buyerName)}
+                </div>
+                <div class="text-[11px] text-emerald-400 font-mono mt-0.5">✓ Pembayaran Terverifikasi</div>
+              </div>
+
+              <div class="w-full py-2 rounded-xl bg-white/5 text-slate-400 font-mono font-bold text-[11px] text-center border border-white/5">
+                Slot Sudah Terisi
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      container.innerHTML = html;
+    }
+
+    function updateLiveTimersInDOM() {
+      // Update timer di tiap kartu slot
+      document.querySelectorAll("[data-timer-slot]").forEach((el) => {
+        const slotId = el.getAttribute("data-timer-slot");
+        const slot = slotsState[slotId];
+        if (slot && slot.status === "booked") {
+          el.textContent = formatRemainingTime(slot.expiresAt);
+        }
+      });
+
+      // Update timer di navbar & modal tiket jika ada booking aktif
+      if (myActiveSlotId && slotsState[myActiveSlotId]) {
+        const slot = slotsState[myActiveSlotId];
+        const status = getEffectiveStatus(slot);
+        if (status === "booked") {
+          const timeStr = formatRemainingTime(slot.expiresAt);
+          const navText = document.getElementById("navCountdownText");
+          if (navText) navText.textContent = timeStr;
+          const modalTimer = document.getElementById("ticketCountdownTimer");
+          if (modalTimer) modalTimer.textContent = timeStr;
+        } else if (status === "waiting_verification") {
+          const modalTimer = document.getElementById("ticketCountdownTimer");
+          if (modalTimer) modalTimer.textContent = "MENUNGGU ADMIN";
+        }
+      }
+
+      // Update timer di tabel admin jika sedang terbuka
+      if (isAdminAuthenticated) {
+        document.querySelectorAll("[data-admin-timer]").forEach((el) => {
+          const slotId = el.getAttribute("data-admin-timer");
+          const slot = slotsState[slotId];
+          if (slot && slot.status === "booked") {
+            el.textContent = formatRemainingTime(slot.expiresAt);
+          }
+        });
+      }
+    }
+
+    function renderActiveBookingNav() {
+      const btn = document.getElementById("activeBookingNavBtn");
+      if (!btn) return;
+      if (myActiveSlotId && slotsState[myActiveSlotId]) {
+        const st = getEffectiveStatus(slotsState[myActiveSlotId]);
+        if (st === "booked" || st === "waiting_verification") {
+          btn.classList.remove("hidden");
+          btn.classList.add("inline-flex");
+          return;
+        }
+      }
+      btn.classList.add("hidden");
+      btn.classList.remove("inline-flex");
+    }
+
+    // =========================================================================
+    // INTERAKSI KLIK SLOT, FORM BOOKING, & PEMBUKAAN REKENING
+    // =========================================================================
+    window.switchPartTab = function(partNum) {
+      currentSelectedPart = partNum;
+      const btn1 = document.getElementById("tabBtnPart1");
+      const btn2 = document.getElementById("tabBtnPart2");
+      const banner = document.getElementById("activePartInfoBanner");
+
+      if (partNum === 1) {
+        btn1.className = "px-4 py-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg border border-yellow-400/50";
+        btn2.className = "px-4 py-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white";
+        banner.innerHTML = `
+          <span class="px-3 py-1 rounded-lg bg-yellow-400 text-black font-display font-extrabold text-xs">
+            KELAS SKD 2027 - PART 1 (KUOTA 4 ORANG)
+          </span>
+          <span class="text-xs sm:text-sm text-slate-200 font-medium flex items-center gap-1.5">
+            <i class="ph-bold ph-calendar-check text-yellow-400"></i>
+            Start Kelas: <strong>14 November 2026</strong>
+          </span>
+          <span class="text-xs text-slate-400 font-mono">
+            • Sabtu 18.50 WIB & Minggu 16.00 WIB
+          </span>
+        `;
+      } else {
+        btn2.className = "px-4 py-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg border border-sky-300/50";
+        btn1.className = "px-4 py-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white";
+        banner.innerHTML = `
+          <span class="px-3 py-1 rounded-lg bg-sky-400 text-black font-display font-extrabold text-xs">
+            KELAS SKD 2027 - PART 2 (KUOTA 10 ORANG)
+          </span>
+          <span class="text-xs sm:text-sm text-slate-200 font-medium flex items-center gap-1.5">
+            <i class="ph-bold ph-calendar-check text-sky-400"></i>
+            Start Kelas: <strong>23 Januari 2027</strong>
+          </span>
+          <span class="text-xs text-slate-400 font-mono">
+            • Sabtu 18.50 WIB & Minggu 16.00 WIB
+          </span>
+        `;
+      }
+      renderSlotsGrid();
+    };
+
+    window.handleSlotCardClick = async function(slotId) {
+      if (!rtdbReady) {
+        showToast("Sedang menghubungkan ke Firebase. Tunggu sebentar lalu coba lagi.", "info");
+        return;
+      }
+      const slot = slotsState[slotId];
+      if (!slot) return;
+      const status = getEffectiveStatus(slot);
+
+      // Pemilik booking dapat membuka kembali tiketnya pada browser yang sama.
+      if (myActiveSlotId === slotId || (firebaseUser && slot.ownerUid === firebaseUser.uid && status !== "available")) {
+        const privateData = await loadPrivateSlot(slot);
+        if (privateData) slotsState[slotId] = { ...slot, ...privateData };
+        myActiveSlotId = slotId;
+        localStorage.setItem(ACTIVE_SLOT_STORAGE_KEY, slotId);
+        openActiveTicketModal();
+        return;
+      }
+
+      if (status === "available") {
+        // Buka form booking
+        document.getElementById("bookingSlotId").value = slotId;
+        document.getElementById("modalSlotPartBadge").textContent = `PART ${slot.part} • NOMOR SLOT #${slot.slotNumber}`;
+        document.getElementById("bookingFormModal").classList.remove("hidden");
+        document.getElementById("bookingFormModal").classList.add("flex");
+        setTimeout(() => document.getElementById("buyerNameInput").focus(), 100);
+      } else if (status === "booked" || status === "waiting_verification") {
+        // Jika pengguna baru me-refresh browser dan ingin membuka kembali slot miliknya dengan email
+        openRecoverTicketModal();
+        showToast("Slot ini sedang dikunci. Masukkan email Anda jika ini adalah booking Anda.", "info");
+      }
+    };
+
+    window.closeBookingFormModal = function() {
+      document.getElementById("bookingFormModal").classList.add("hidden");
+      document.getElementById("bookingFormModal").classList.remove("flex");
+    };
+
+    window.submitSlotBooking = async function(e) {
+      e.preventDefault();
+      const slotId = document.getElementById("bookingSlotId").value;
+      const slot = slotsState[slotId];
+      if (!slot || !rtdbReady || !firebaseUser) {
+        showToast("Firebase belum siap. Tunggu koneksi selesai.", "warning");
+        return;
+      }
+
+      const name = document.getElementById("buyerNameInput").value.trim();
+      const email = document.getElementById("buyerEmailInput").value.trim().toLowerCase();
+      const paymentMethodEl = document.querySelector('input[name="paymentMethod"]:checked');
+      const paymentMethod = paymentMethodEl ? paymentMethodEl.value : "BCA";
+      if (!name || !email) {
+        showToast("Nama dan email wajib diisi.", "warning");
+        return;
+      }
+
+      const now = Date.now();
+      const expiresAt = now + BOOKING_DURATION_MS;
+      const publicData = {
+        id: slotId,
+        part: Number(slot.part),
+        slotNumber: Number(slot.slotNumber),
+        status: "booked",
+        ownerUid: firebaseUser.uid,
+        maskedName: maskParticipantName(name),
+        bookedAt: now,
+        expiresAt,
+        updatedAt: now
+      };
+      const privateData = {
+        slotId,
+        part: Number(slot.part),
+        slotNumber: Number(slot.slotNumber),
+        ownerUid: firebaseUser.uid,
+        buyerName: name,
+        buyerEmail: email,
+        paymentMethod,
+        bookedAt: now,
+        expiresAt,
+        updatedAt: now
+      };
+
+      try {
+        const result = await runTransaction(
+          ref(rtdb, `${SLOT_PUBLIC_PATH}/${slotId}`),
+          (current) => {
+            const currentStatus = current?.status || "available";
+            const expired = currentStatus === "booked" && Number(current?.expiresAt || 0) <= Date.now();
+            if (currentStatus !== "available" && !expired) return;
+            return publicData;
+          },
+          { applyLocally: false }
+        );
+
+        if (!result.committed) {
+          closeBookingFormModal();
+          showToast("Maaf, slot ini baru saja diambil peserta lain.", "error");
+          return;
+        }
+
+        try {
+          await set(ref(rtdb, privateSlotPath(firebaseUser.uid, slotId)), privateData);
+        } catch (privateError) {
+          console.error("[Patungan SKD TIU] Gagal menyimpan data privat booking:", {
+            code: privateError?.code || "unknown",
+            message: privateError?.message || String(privateError),
+            error: privateError
+          });
+          await runTransaction(ref(rtdb, `${SLOT_PUBLIC_PATH}/${slotId}`), (current) => {
+            if (current?.ownerUid !== firebaseUser.uid || current?.status !== "booked") return;
+            return { ...current, status: "available", ownerUid: "", maskedName: "", bookedAt: 0, expiresAt: 0, updatedAt: Date.now() };
+          }, { applyLocally: false });
+          showToast("Data booking belum tersimpan. Periksa Rules bagian private.", "error");
+          return;
+        }
+
+        slotsState[slotId] = { ...createDefaultSlots()[slotId], ...publicData, ...privateData };
+        myActiveSlotId = slotId;
+        localStorage.setItem(ACTIVE_SLOT_STORAGE_KEY, slotId);
+        closeBookingFormModal();
+        renderAllUI();
+        showToast(`Slot #${slot.slotNumber} (Part ${slot.part}) berhasil dikunci selama 5 menit!`, "success");
+        openActiveTicketModal();
+      } catch (err) {
+        const firebaseCode = err?.code || "unknown";
+        const firebaseMessage = err?.message || String(err || "Tidak ada detail error");
+        console.error("[Patungan SKD TIU] Booking transaction gagal:", {
+          code: firebaseCode,
+          message: firebaseMessage,
+          error: err
+        });
+        showToast(`Booking gagal (${firebaseCode}): ${firebaseMessage}`, "error");
+      }
+    };
+
+    // =========================================================================
+    // PEMBUKAAN NOMOR REKENING & FORMAT PESAN WHATSAPP OTOMATIS
+    // =========================================================================
+    function buildWhatsAppMessage(slot) {
+      return `Halo Kak, saya ingin konfirmasi pembayaran Patungan *Kelas SKD Privat AL FAIZ*.\n\n*Nomor slot:* Slot #${slot.slotNumber}\nPart yang dipilih: Part ${slot.part}\nNama: ${slot.buyerName}\nEmail: ${slot.buyerEmail}\nMetode pembayaran: ${slot.paymentMethod}\nNominal: Rp20.000\n\nBerikut saya lampirkan bukti transfer nya. Terima kasih!`;
+    }
+
+    function populatePaymentTicketModal(slotId) {
+      const slot = slotsState[slotId];
+      if (!slot) return;
+
+      document.getElementById("ticketSlotLabel").textContent = `Slot #${slot.slotNumber} (Part ${slot.part})`;
+      document.getElementById("ticketBuyerName").textContent = slot.buyerName;
+      document.getElementById("ticketBuyerEmail").textContent = slot.buyerEmail;
+      document.getElementById("ticketPaymentMethod").textContent = slot.paymentMethod;
+
+      const pill = document.getElementById("ticketStatusPill");
+      if (slot.status === "waiting_verification") {
+        pill.textContent = "MENUNGGU VERIFIKASI ADMIN";
+        pill.className = "px-2.5 py-0.5 rounded-full bg-sky-400/20 text-sky-300 border border-sky-400/40 font-mono text-[11px] font-bold uppercase";
+      } else {
+        pill.textContent = "SLOT DIKUNCI SEMENTARA (5 MENIT)";
+        pill.className = "px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/40 font-mono text-[11px] font-bold uppercase";
+      }
+
+      // Render Nomor Rekening yang sebelumnya disembunyikan
+      const accountsBox = document.getElementById("unlockedPaymentAccountsBox");
+      const isBcaPrimary = slot.paymentMethod === "BCA";
+
+      accountsBox.innerHTML = `
+        <!-- Rekening BCA -->
+        <div class="p-3.5 rounded-2xl ${isBcaPrimary ? 'bg-yellow-400/15 border-2 border-yellow-400' : 'bg-white/[0.04] border border-white/10'} flex items-center justify-between gap-2">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded bg-blue-600 text-white font-mono font-extrabold text-[10px]">BCA</span>
+              ${isBcaPrimary ? '<span class="text-[10px] font-mono text-yellow-300 font-bold">★ Metode Pilihan Anda</span>' : ''}
+            </div>
+            <div class="font-mono font-extrabold text-lg text-white tracking-wider mt-1">${PROTECTED_PAYMENT_DATA.bcaNumber}</div>
+          </div>
+          <button onclick="copyTextToClipboard('${PROTECTED_PAYMENT_DATA.bcaNumber}', 'Nomor Rekening BCA')" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-yellow-400 hover:text-black text-white font-mono text-xs font-bold transition flex items-center gap-1.5 shrink-0">
+            <i class="ph-bold ph-copy"></i> Salin
+          </button>
+        </div>
+
+        <!-- Rekening ShopeePay -->
+        <div class="p-3.5 rounded-2xl ${!isBcaPrimary ? 'bg-yellow-400/15 border-2 border-yellow-400' : 'bg-white/[0.04] border border-white/10'} flex items-center justify-between gap-2">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded bg-orange-600 text-white font-mono font-extrabold text-[10px]">SHOPEEPAY</span>
+              ${!isBcaPrimary ? '<span class="text-[10px] font-mono text-yellow-300 font-bold">★ Metode Pilihan Anda</span>' : ''}
+            </div>
+            <div class="font-mono font-extrabold text-lg text-white tracking-wider mt-1">${PROTECTED_PAYMENT_DATA.shopeepayNumber}</div>
+          </div>
+          <button onclick="copyTextToClipboard('${PROTECTED_PAYMENT_DATA.shopeepayNumber}', 'Nomor ShopeePay')" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-yellow-400 hover:text-black text-white font-mono text-xs font-bold transition flex items-center gap-1.5 shrink-0">
+            <i class="ph-bold ph-copy"></i> Salin
+          </button>
+        </div>
+      `;
+
+      // Render Preview Pesan WA
+      document.getElementById("waMessagePreview").textContent = buildWhatsAppMessage(slot);
+    }
+
+    window.openActiveTicketModal = function() {
+      if (!myActiveSlotId || !slotsState[myActiveSlotId]) return;
+      populatePaymentTicketModal(myActiveSlotId);
+      document.getElementById("paymentTicketModal").classList.remove("hidden");
+      document.getElementById("paymentTicketModal").classList.add("flex");
+    };
+
+    window.closePaymentTicketModal = function() {
+      document.getElementById("paymentTicketModal").classList.add("hidden");
+      document.getElementById("paymentTicketModal").classList.remove("flex");
+    };
+
+    window.confirmAndOpenWhatsApp = async function() {
+      if (!myActiveSlotId || !slotsState[myActiveSlotId]) return;
+      const slot = slotsState[myActiveSlotId];
+
+      // Tandai status slot sebagai 'waiting_verification' agar admin tahu pembeli sudah klik konfirmasi WA
+      const updatedSlot = {
+        ...slot,
+        status: "waiting_verification"
+      };
+      const saved = await saveSlotToCloud(updatedSlot);
+      if (!saved) return;
+
+      const message = buildWhatsAppMessage(updatedSlot);
+      const encodedMsg = encodeURIComponent(message);
+      const waUrl = `https://wa.me/${PROTECTED_PAYMENT_DATA.waNumber}?text=${encodedMsg}`;
+
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+      showToast("Membuka WhatsApp Admin untuk konfirmasi pembayaran...", "success");
+    };
+
+    window.copyWhatsAppText = function() {
+      if (!myActiveSlotId || !slotsState[myActiveSlotId]) return;
+      const msg = buildWhatsAppMessage(slotsState[myActiveSlotId]);
+      copyTextToClipboard(msg, "Pesan Konfirmasi WhatsApp");
+    };
+
+    window.cancelMyBooking = async function() {
+      if (!myActiveSlotId || !slotsState[myActiveSlotId]) return;
+      const slot = slotsState[myActiveSlotId];
+      const resetSlot = {
+        ...slot,
+        status: "available",
+        buyerName: "",
+        buyerEmail: "",
+        paymentMethod: "",
+        bookedAt: 0,
+        expiresAt: 0,
+        sessionToken: ""
+      };
+      const saved = await saveSlotToCloud(resetSlot);
+      if (!saved) return;
+      myActiveSlotId = null;
+      localStorage.removeItem(ACTIVE_SLOT_STORAGE_KEY);
+      closePaymentTicketModal();
+      showToast("Booking dibatalkan. Slot kembali tersedia.", "info");
+    };
+
+    // =========================================================================
+    // FITUR PULIHKAN TIKET BOOKING VIA EMAIL
+    // =========================================================================
+    window.openRecoverTicketModal = function() {
+      document.getElementById("recoverTicketModal").classList.remove("hidden");
+      document.getElementById("recoverTicketModal").classList.add("flex");
+    };
+
+    window.closeRecoverTicketModal = function() {
+      document.getElementById("recoverTicketModal").classList.add("hidden");
+      document.getElementById("recoverTicketModal").classList.remove("flex");
+    };
+
+    window.handleRecoverTicket = function(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById("recoverEmailInput").value.trim().toLowerCase();
+      if (!emailInput) return;
+
+      const foundSlot = Object.values(slotsState).find((slot) => {
+        const status = getEffectiveStatus(slot);
+        return slot.ownerUid === firebaseUser?.uid &&
+          ["booked", "waiting_verification"].includes(status) &&
+          String(slot.buyerEmail || "").toLowerCase() === emailInput;
+      });
+
+      if (foundSlot) {
+        myActiveSlotId = foundSlot.id;
+        localStorage.setItem(ACTIVE_SLOT_STORAGE_KEY, foundSlot.id);
+        closeRecoverTicketModal();
+        openActiveTicketModal();
+        showToast(`Tiket Slot #${foundSlot.slotNumber} (Part ${foundSlot.part}) berhasil ditemukan!`, "success");
+      } else {
+        showToast("Booking tidak ditemukan pada perangkat ini. Gunakan browser yang sama saat booking.", "error");
+      }
+    };
+
+    // =========================================================================
+    // DASHBOARD ADMIN TERSEMBUNYI (PIN: 1140)
+    // =========================================================================
+    window.openAdminPinModal = function() {
+      if (isAdminAuthenticated && isFirebaseAdmin) {
+        openAdminDashboardModal();
+        return;
+      }
+      document.getElementById("adminEmailInput").value = "";
+      document.getElementById("adminPasswordInput").value = "";
+      document.getElementById("adminPinInput").value = "";
+      document.getElementById("adminPinModal").classList.remove("hidden");
+      document.getElementById("adminPinModal").classList.add("flex");
+      setTimeout(() => document.getElementById("adminEmailInput").focus(), 100);
+    };
+
+    window.closeAdminPinModal = function() {
+      document.getElementById("adminPinModal").classList.add("hidden");
+      document.getElementById("adminPinModal").classList.remove("flex");
+    };
+
+    window.verifyAdminPin = async function(e) {
+      e.preventDefault();
+      const email = document.getElementById("adminEmailInput").value.trim();
+      const password = document.getElementById("adminPasswordInput").value;
+      const inputPin = document.getElementById("adminPinInput").value.trim();
+
+      if (inputPin !== ADMIN_PIN_CODE) {
+        showToast("PIN website salah. Akses ditolak.", "error");
+        document.getElementById("adminPinInput").value = "";
+        return;
+      }
+      if (!email || !password) {
+        showToast("Email dan password akun admin wajib diisi.", "warning");
+        return;
+      }
+      if (!auth || !rtdb || !rtdbReady) {
+        showToast("Firebase belum terhubung. Tunggu sampai status realtime aktif.", "warning");
+        return;
+      }
+
+      try {
+        const credential = await signInWithEmailAndPassword(auth, email, password);
+        firebaseUser = credential.user;
+
+        const adminSnap = await get(ref(rtdb, `adminUsers/${firebaseUser.uid}`));
+        isFirebaseAdmin = adminSnap.val() === true;
+
+        document.getElementById("adminPasswordInput").value = "";
+
+        if (!isFirebaseAdmin) {
+          console.warn("Akun berhasil login tetapi UID belum terdaftar sebagai admin:", firebaseUser.uid);
+          if (typeof window.copyTextToClipboard === "function") {
+            window.copyTextToClipboard(firebaseUser.uid, "Firebase UID Admin");
+          }
+          showToast("Login berhasil, tetapi UID akun ini belum terdaftar di /adminUsers dengan nilai true. UID sudah disalin.", "warning");
+          return;
+        }
+
+        // Setelah admin terautentikasi, muat data privat semua slot agar tabel admin lengkap.
+        const revision = ++snapshotRevision;
+        await hydratePrivateSlotData(slotsState, revision);
+        if (revision === snapshotRevision) renderAllUI();
+
+        isAdminAuthenticated = true;
+        closeAdminPinModal();
+        openAdminDashboardModal();
+        showToast("Login admin Firebase berhasil. Dashboard siap digunakan.", "success");
+      } catch (error) {
+        console.error("Login admin Firebase gagal:", error);
+        const code = error?.code || "";
+        let message = "Login admin gagal. Periksa email dan password.";
+        if (code === "auth/invalid-credential" || code === "auth/wrong-password" || code === "auth/user-not-found") {
+          message = "Email atau password akun Firebase tidak sesuai.";
+        } else if (code === "auth/too-many-requests") {
+          message = "Terlalu banyak percobaan. Coba lagi beberapa saat.";
+        } else if (code === "auth/operation-not-allowed") {
+          message = "Provider Email/Password belum aktif di Firebase Authentication.";
+        }
+        showToast(message, "error");
+      }
+    };
+
+    window.openAdminDashboardModal = function() {
+      renderAdminTables();
+      document.getElementById("adminDashboardModal").classList.remove("hidden");
+      document.getElementById("adminDashboardModal").classList.add("flex");
+    };
+
+    window.closeAdminDashboardModal = function() {
+      document.getElementById("adminDashboardModal").classList.add("hidden");
+      document.getElementById("adminDashboardModal").classList.remove("flex");
+    };
+
+    window.toggleFirebaseSetupPanel = function() {
+      const panel = document.getElementById("firebaseSetupPanel");
+      panel.classList.toggle("hidden");
+    };
+
+    window.saveCustomRtdbUrl = async function() {
+      if (rtdbReady) {
+        showToast("Firebase Realtime Database sudah terhubung.", "success");
+        return;
+      }
+      await initRealtimeDatabase();
+      if (!rtdbReady) showToast("Belum berhasil terhubung. Periksa Rules Firebase.", "warning");
+    };
+
+    function renderAdminTables() {
+      let verifiedCount = 0;
+      let pendingCount = 0;
+
+      const buildRowHtml = (slot) => {
+        const st = getEffectiveStatus(slot);
+        if (st === "verified") verifiedCount++;
+        if (st === "booked" || st === "waiting_verification") pendingCount++;
+
+        let badgeHtml = `<span class="px-2 py-0.5 rounded bg-white/10 text-slate-400 font-mono text-[10px]">KOSONG</span>`;
+        if (st === "booked") {
+          badgeHtml = `<span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-mono text-[10px]">BOOKED (5M)</span>`;
+        } else if (st === "waiting_verification") {
+          badgeHtml = `<span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/40 font-mono text-[10px]">BUTUH VERIFIKASI</span>`;
+        } else if (st === "verified") {
+          badgeHtml = `<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono text-[10px]">✓ LUNAS</span>`;
+        }
+
+        const timerText = st === "booked" ? `<span data-admin-timer="${slot.id}" class="font-mono text-amber-300 font-bold">${formatRemainingTime(slot.expiresAt)}</span>` : "-";
+
+        return `
+          <tr class="hover:bg-white/[0.02] transition">
+            <td class="py-3 px-4 font-mono font-bold text-white">Slot #${slot.slotNumber}</td>
+            <td class="py-3 px-4">${badgeHtml}</td>
+            <td class="py-3 px-4 font-semibold text-white">${slot.buyerName ? escapeHtml(slot.buyerName) : '<span class="text-slate-600">-</span>'}</td>
+            <td class="py-3 px-4 font-mono text-slate-300">${slot.buyerEmail ? escapeHtml(slot.buyerEmail) : '<span class="text-slate-600">-</span>'}</td>
+            <td class="py-3 px-4 font-mono text-yellow-400 font-bold">${escapeHtml(slot.paymentMethod || '-')}</td>
+            <td class="py-3 px-4">${timerText}</td>
+            <td class="py-3 px-4 text-right space-x-1.5 whitespace-nowrap">
+              ${st !== "verified" && st !== "available" ? `
+                <button onclick="adminVerifySlot('${slot.id}')" class="px-2.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-mono font-extrabold text-[11px] transition">
+                  ✓ Verifikasi Lunas
+                </button>
+              ` : ''}
+              ${st === "available" ? `
+                <button onclick="adminQuickFillSlot('${slot.id}')" class="px-2.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-slate-200 font-mono text-[11px] transition">
+                  + Tandai Terisi
+                </button>
+              ` : ''}
+              ${st !== "available" ? `
+                <button onclick="adminResetSlot('${slot.id}')" class="px-2.5 py-1.5 rounded-lg bg-red-500/20 hover:bg-red-500/40 text-red-300 border border-red-500/30 font-mono text-[11px] transition">
+                  Kosongkan Slot
+                </button>
+              ` : ''}
+            </td>
+          </tr>
+        `;
+      };
+
+      let p1Rows = "";
+      for (let i = 1; i <= 4; i++) {
+        p1Rows += buildRowHtml(slotsState[`part1_slot_${i}`]);
+      }
+      document.getElementById("adminTablePart1").innerHTML = p1Rows;
+
+      let p2Rows = "";
+      for (let i = 1; i <= 10; i++) {
+        p2Rows += buildRowHtml(slotsState[`part2_slot_${i}`]);
+      }
+      document.getElementById("adminTablePart2").innerHTML = p2Rows;
+
+      // Update Admin Stats
+      document.getElementById("adminStatVerified").textContent = `${verifiedCount} / 14 Slot`;
+      document.getElementById("adminStatPending").textContent = `${pendingCount} Slot`;
+      const totalRupiah = verifiedCount * PROTECTED_PAYMENT_DATA.nominalValue;
+      document.getElementById("adminStatRevenue").textContent = `Rp${totalRupiah.toLocaleString("id-ID")}`;
+    }
+
+    window.adminVerifySlot = async function(slotId) {
+      if (!isAdminAuthenticated || !isFirebaseAdmin) return;
+      const slot = slotsState[slotId];
+      if (!slot) return;
+      const updated = {
+        ...slot,
+        status: "verified",
+        expiresAt: 0
+      };
+      const saved = await saveSlotToCloud(updated);
+      if (!saved) return;
+      showToast(`Pembayaran ${slot.buyerName} (Slot #${slot.slotNumber} Part ${slot.part}) berhasil diverifikasi LUNAS!`, "success");
+    };
+
+    window.adminResetSlot = async function(slotId) {
+      if (!isAdminAuthenticated || !isFirebaseAdmin) return;
+      const slot = slotsState[slotId];
+      if (!slot) return;
+      const resetSlot = {
+        ...slot,
+        status: "available",
+        buyerName: "",
+        buyerEmail: "",
+        paymentMethod: "",
+        bookedAt: 0,
+        expiresAt: 0,
+        sessionToken: ""
+      };
+      const saved = await saveSlotToCloud(resetSlot);
+      if (!saved) return;
+      if (myActiveSlotId === slotId) {
+        myActiveSlotId = null;
+        localStorage.removeItem(ACTIVE_SLOT_STORAGE_KEY);
+      }
+      showToast(`Slot #${slot.slotNumber} (Part ${slot.part}) telah dikosongkan kembali.`, "info");
+    };
+
+    window.adminQuickFillSlot = async function(slotId) {
+      if (!isAdminAuthenticated || !isFirebaseAdmin) return;
+      const slot = slotsState[slotId];
+      if (!slot) return;
+      const updated = {
+        ...slot,
+        status: "verified",
+        buyerName: `Peserta #${slot.slotNumber}`,
+        buyerEmail: `peserta${slot.slotNumber}@alfaiz.id`,
+        paymentMethod: "BCA",
+        bookedAt: Date.now(),
+        expiresAt: 0
+      };
+      const saved = await saveSlotToCloud(updated);
+      if (!saved) return;
+      showToast(`Slot #${slot.slotNumber} (Part ${slot.part}) ditandai LUNAS oleh Admin.`, "success");
+    };
+
+    // =========================================================================
+    // UTILITAS CLIPBOARD & TOAST NOTIFICATION (TANPA ALERT/CONFIRM)
+    // =========================================================================
+    window.copyTextToClipboard = function(text, label) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        showToast(`${label} berhasil disalin!`, "success");
+      } catch (err) {
+        showToast(`Gagal menyalin ${label}.`, "error");
+      }
+      document.body.removeChild(textarea);
+    };
+
+    window.showToast = function(message, type = "info") {
+      const container = document.getElementById("toastContainer");
+      if (!container) return;
+
+      const colors = {
+        success: "bg-emerald-950/95 border-emerald-400 text-emerald-200",
+        error: "bg-red-950/95 border-red-400 text-red-200",
+        warning: "bg-amber-950/95 border-amber-400 text-amber-200",
+        info: "bg-slate-900/95 border-yellow-400 text-slate-100"
+      };
+      const icons = {
+        success: "ph-check-circle text-emerald-400",
+        error: "ph-warning-octagon text-red-400",
+        warning: "ph-timer text-amber-400",
+        info: "ph-info text-yellow-400"
+      };
+
+      const toast = document.createElement("div");
+      toast.className = `pointer-events-auto p-4 rounded-2xl border-l-4 shadow-2xl backdrop-blur-md flex items-start gap-3 text-xs font-medium transition-all duration-300 ${colors[type] || colors.info}`;
+      toast.innerHTML = `
+        <i class="ph-fill ${icons[type] || icons.info} text-lg shrink-0 mt-0.5"></i>
+        <div class="flex-1 leading-relaxed">${message}</div>
+      `;
+
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(10px)";
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    };
+
+    // Jalankan Aplikasi saat DOM selesai dimuat
+    window.addEventListener("DOMContentLoaded", () => {
+      const rtdbInput = document.getElementById("customRtdbUrlInput");
+      if (rtdbInput) rtdbInput.value = customRtdbUrl;
+      renderAllUI();
+      initRealtimeDatabase();
+    });
+  </script>
+</body>
+</html>
